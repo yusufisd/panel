@@ -150,3 +150,4 @@
     </div>
 </div>
 <!-- Left Sidebar End -->
+<?php /**PATH C:\xampp\htdocs\panel\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

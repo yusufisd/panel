@@ -1,15 +1,14 @@
-@extends('layouts.master')
-@section('title') Yönetim Paneli @endsection
-@section('css')
+<?php $__env->startSection('title'); ?> Yönetim Paneli <?php $__env->stopSection(); ?>
+<?php $__env->startSection('css'); ?>
 
-<link href="{{ URL::asset('/assets/libs/admin-resources/admin-resources.min.css') }}" rel="stylesheet">
+<link href="<?php echo e(URL::asset('/assets/libs/admin-resources/admin-resources.min.css')); ?>" rel="stylesheet">
 
-@endsection
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 
-@component('components.breadcrumb')
-@slot('li_1') Panel @endslot
-@endcomponent
+<?php $__env->startComponent('components.breadcrumb'); ?>
+<?php $__env->slot('li_1'); ?> Panel <?php $__env->endSlot(); ?>
+<?php echo $__env->renderComponent(); ?>
 
 <div class="row">
     <div class="col-xl-3 col-md-6">
@@ -323,7 +322,7 @@
                 <div class="px-3" data-simplebar style="max-height: 386px;">
                     <div class="d-flex align-items-center pb-4">
                         <div class="avatar-md me-4">
-                            <img src="{{ URL::asset('./assets/images/users/avatar-2.jpg') }}" class="img-fluid rounded-circle" alt="">
+                            <img src="<?php echo e(URL::asset('./assets/images/users/avatar-2.jpg')); ?>" class="img-fluid rounded-circle" alt="">
                         </div>
                         <div class="flex-grow-1">
                             <h5 class="font-size-15 mb-1"><a href="" class="text-dark">Randy Matthews</a></h5>
@@ -346,7 +345,7 @@
 
                     <div class="d-flex align-items-center pb-4">
                         <div class="avatar-md me-4">
-                            <img src="{{ URL::asset('./assets/images/users/avatar-4.jpg') }}" class="img-fluid rounded-circle" alt="">
+                            <img src="<?php echo e(URL::asset('./assets/images/users/avatar-4.jpg')); ?>" class="img-fluid rounded-circle" alt="">
                         </div>
                         <div class="flex-grow-1">
                             <h5 class="font-size-15 mb-1"><a href="" class="text-dark">Vernon Wood</a></h5>
@@ -369,7 +368,7 @@
 
                     <div class="d-flex align-items-center pb-4">
                         <div class="avatar-md me-4">
-                            <img src="{{ URL::asset('./assets/images/users/avatar-5.jpg') }}" class="img-fluid rounded-circle" alt="">
+                            <img src="<?php echo e(URL::asset('./assets/images/users/avatar-5.jpg')); ?>" class="img-fluid rounded-circle" alt="">
                         </div>
                         <div class="flex-grow-1">
                             <h5 class="font-size-15 mb-1"><a href="" class="text-dark">Howard Rhoades</a></h5>
@@ -392,7 +391,7 @@
 
                     <div class="d-flex align-items-center pb-4">
                         <div class="avatar-md me-4">
-                            <img src="{{ URL::asset('./assets/images/users/avatar-6.jpg') }}" class="img-fluid rounded-circle" alt="">
+                            <img src="<?php echo e(URL::asset('./assets/images/users/avatar-6.jpg')); ?>" class="img-fluid rounded-circle" alt="">
                         </div>
                         <div class="flex-grow-1">
                             <h5 class="font-size-15 mb-1"><a href="" class="text-dark">Arthur Zurcher</a></h5>
@@ -415,7 +414,7 @@
 
                     <div class="d-flex align-items-center pb-4">
                         <div class="avatar-md me-4">
-                            <img src="{{ URL::asset('./assets/images/users/avatar-8.jpg') }}" class="img-fluid rounded-circle" alt="">
+                            <img src="<?php echo e(URL::asset('./assets/images/users/avatar-8.jpg')); ?>" class="img-fluid rounded-circle" alt="">
                         </div>
                         <div class="flex-grow-1">
                             <h5 class="font-size-15 mb-1"><a href="" class="text-dark">Angela Palmer</a></h5>
@@ -438,7 +437,7 @@
 
                     <div class="d-flex align-items-center pb-3">
                         <div class="avatar-md me-4">
-                            <img src="{{ URL::asset('./assets/images/users/avatar-9.jpg') }}" class="img-fluid rounded-circle" alt="">
+                            <img src="<?php echo e(URL::asset('./assets/images/users/avatar-9.jpg')); ?>" class="img-fluid rounded-circle" alt="">
                         </div>
                         <div class="flex-grow-1">
                             <h5 class="font-size-15 mb-1"><a href="" class="text-dark">Dorothy Wimson</a></h5>
@@ -493,7 +492,7 @@
                                 <tr>
                                     <td style="width: 50px;">
                                         <div class="avatar-md me-4">
-                                            <img src="{{ URL::asset('./assets/images/product/img-1.png') }}" class="img-fluid" alt="">
+                                            <img src="<?php echo e(URL::asset('./assets/images/product/img-1.png')); ?>" class="img-fluid" alt="">
                                         </div>
                                     </td>
 
@@ -526,7 +525,7 @@
                                 <tr>
                                     <td style="width: 50px;">
                                         <div class="avatar-md me-4">
-                                            <img src="{{ URL::asset('./assets/images/product/img-2.png') }}" class="img-fluid" alt="">
+                                            <img src="<?php echo e(URL::asset('./assets/images/product/img-2.png')); ?>" class="img-fluid" alt="">
                                         </div>
                                     </td>
 
@@ -559,7 +558,7 @@
                                 <tr>
                                     <td style="width: 50px;">
                                         <div class="avatar-md me-4">
-                                            <img src="{{ URL::asset('./assets/images/product/img-3.png') }}" class="img-fluid" alt="">
+                                            <img src="<?php echo e(URL::asset('./assets/images/product/img-3.png')); ?>" class="img-fluid" alt="">
                                         </div>
                                     </td>
 
@@ -592,7 +591,7 @@
                                 <tr>
                                     <td style="width: 50px;">
                                         <div class="avatar-md me-4">
-                                            <img src="{{ URL::asset('./assets/images/product/img-4.png') }}" class="img-fluid" alt="">
+                                            <img src="<?php echo e(URL::asset('./assets/images/product/img-4.png')); ?>" class="img-fluid" alt="">
                                         </div>
                                     </td>
 
@@ -625,7 +624,7 @@
                                 <tr>
                                     <td style="width: 50px;">
                                         <div class="avatar-md me-4">
-                                            <img src="{{ URL::asset('./assets/images/product/img-5.png') }}" class="img-fluid" alt="">
+                                            <img src="<?php echo e(URL::asset('./assets/images/product/img-5.png')); ?>" class="img-fluid" alt="">
                                         </div>
                                     </td>
 
@@ -658,7 +657,7 @@
                                 <tr>
                                     <td style="width: 50px;">
                                         <div class="avatar-md me-4">
-                                            <img src="{{ URL::asset('./assets/images/product/img-6.png') }}" class="img-fluid" alt="">
+                                            <img src="<?php echo e(URL::asset('./assets/images/product/img-6.png')); ?>" class="img-fluid" alt="">
                                         </div>
                                     </td>
 
@@ -721,7 +720,7 @@
                         <li>
                             <div class="conversation-list">
                                 <div class="d-flex">
-                                    <img src="{{ URL::asset('assets/images/users/avatar-3.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-3.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                     <div class="flex-1">
                                         <div class="ctext-wrap">
                                             <div class="ctext-wrap-content">
@@ -768,7 +767,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="{{ URL::asset('assets/images/users/avatar-6.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-6.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                 </div>
 
                             </div>
@@ -778,7 +777,7 @@
                         <li>
                             <div class="conversation-list">
                                 <div class="d-flex">
-                                    <img src="{{ URL::asset('assets/images/users/avatar-3.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-3.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                     <div class="flex-1">
                                         <div class="ctext-wrap">
                                             <div class="ctext-wrap-content">
@@ -803,7 +802,7 @@
                                 </div>
 
                                 <div class="d-flex">
-                                    <img src="{{ URL::asset('assets/images/users/avatar-3.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-3.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                     <div class="flex-1">
                                         <div class="ctext-wrap">
                                             <div class="ctext-wrap-content">
@@ -854,7 +853,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="{{ URL::asset('assets/images/users/avatar-6.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-6.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                 </div>
                             </div>
 
@@ -863,7 +862,7 @@
                         <li>
                             <div class="conversation-list">
                                 <div class="d-flex">
-                                    <img src="{{ URL::asset('assets/images/users/avatar-3.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-3.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                     <div class="flex-1">
                                         <div class="ctext-wrap">
                                             <div class="ctext-wrap-content">
@@ -894,7 +893,7 @@
                         <li>
                             <div class="conversation-list">
                                 <div class="d-flex">
-                                    <img src="{{ URL::asset('assets/images/users/avatar-3.jpg') }}" class="rounded-circle avatar-sm" alt="">
+                                    <img src="<?php echo e(URL::asset('assets/images/users/avatar-3.jpg')); ?>" class="rounded-circle avatar-sm" alt="">
                                     <div class="flex-1">
                                         <div class="ctext-wrap">
                                             <div class="ctext-wrap-content">
@@ -906,13 +905,13 @@
                                                 <ul class="list-inline message-img mt-3  mb-0">
                                                     <li class="list-inline-item message-img-list">
                                                         <a class="d-inline-block m-1" href="">
-                                                            <img src="{{ URL::asset('assets/images/small/img-1.jpg') }}" alt="" class="rounded img-thumbnail">
+                                                            <img src="<?php echo e(URL::asset('assets/images/small/img-1.jpg')); ?>" alt="" class="rounded img-thumbnail">
                                                         </a>
                                                     </li>
 
                                                     <li class="list-inline-item message-img-list">
                                                         <a class="d-inline-block m-1" href="">
-                                                            <img src="{{ URL::asset('assets/images/small/img-2.jpg') }}" alt="" class="rounded img-thumbnail">
+                                                            <img src="<?php echo e(URL::asset('assets/images/small/img-2.jpg')); ?>" alt="" class="rounded img-thumbnail">
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -954,13 +953,15 @@
     </div>
     <!-- end col -->
 </div><!-- end row -->
-@endsection
-@section('script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
 <!-- apexcharts -->
-<script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/admin-resources/admin-resources.min.js') }}"></script>
+<script src="<?php echo e(URL::asset('/assets/libs/apexcharts/apexcharts.min.js')); ?>"></script>
+<script src="<?php echo e(URL::asset('/assets/libs/admin-resources/admin-resources.min.js')); ?>"></script>
 
 <!-- dashboard init -->
-<script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
-<script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
-@endsection
+<script src="<?php echo e(URL::asset('/assets/js/pages/dashboard.init.js')); ?>"></script>
+<script src="<?php echo e(URL::asset('/assets/js/app.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\panel\resources\views/index.blade.php ENDPATH**/ ?>
