@@ -25,8 +25,8 @@
                         <span data-key="t-email">GENEL PROGRAM</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="apps-email-inbox" data-key="t-inbox">-GENEL PROGRAM EKLE</a></li>
-                        <li><a href="apps-email-read" data-key="t-read-email">-GENEL PROGRAMLAR</a></li>
+                        <li><a href="<?php echo e(route('genel_program.add')); ?>" data-key="t-inbox">-PROGRAM EKLE</a></li>
+                        <li><a href="<?php echo e(route('genel_program.list')); ?>" data-key="t-read-email">-PROGRAMLAR</a></li>
                     </ul>
                 </li>
 
@@ -38,8 +38,8 @@
                         <span data-key="t-contacts">EĞİTİM PROGRAMI</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="apps-contacts-grid" data-key="t-user-grid">-EĞİTİM PROGRAMI EKLE</a></li>
-                        <li><a href="apps-contacts-list" data-key="t-user-list">-EĞİTİM PROGRAMLARI</a></li>
+                        <li><a href="<?php echo e(route('egitim_programi.add')); ?>" data-key="t-user-grid">-PROGRAM EKLE</a></li>
+                        <li><a href="<?php echo e(route('egitim_programi.list')); ?>" data-key="t-user-list">-PROGRAMLAR</a></li>
                     </ul>
                 </li>
 
@@ -49,8 +49,8 @@
                         <span data-key="t-tasks">AKADEMİK PROGRAM</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="tasks-list" key="t-task-list">-PROGRAM EKLE</a></li>
-                        <li><a href="tasks-kanban" key="t-kanban-board">-PROGRAMLAR</a></li>
+                        <li><a href="<?php echo e(route('akademik_program.add')); ?>" key="t-task-list">-PROGRAM EKLE</a></li>
+                        <li><a href="<?php echo e(route('akademik_program.list')); ?>" key="t-kanban-board">-PROGRAMLAR</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +61,8 @@
                         <span data-key="t-tasks">DİL SINAVI</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="tasks-list" key="t-task-list">-DİL SINAVI EKLE</a></li>
-                        <li><a href="tasks-kanban" key="t-kanban-board">-DİL SINAVLARI</a></li>
+                        <li><a href="<?php echo e(route('dil_sinavi.add')); ?>" key="t-task-list">-DİL SINAVI EKLE</a></li>
+                        <li><a href="<?php echo e(route('dil_sinavi.list')); ?>" key="t-kanban-board">-DİL SINAVLARI</a></li>
                     </ul>
                 </li>
                 <li class="menu-title" data-key="t-pages">GENEL</li>
@@ -73,8 +73,8 @@
                         <span data-key="t-authentication">DEPARTMAN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="auth-login" data-key="t-login">DEPARTMAN EKLE</a></li>
-                        <li><a href="auth-register" data-key="t-register">DEPARTMANLAR</a></li>
+                        <li><a href="<?php echo e(route('departman.add')); ?>" data-key="t-login">DEPARTMAN EKLE</a></li>
+                        <li><a href="<?php echo e(route('departman.list')); ?>" data-key="t-register">DEPARTMANLAR</a></li>
                     </ul>
                 </li>
 
