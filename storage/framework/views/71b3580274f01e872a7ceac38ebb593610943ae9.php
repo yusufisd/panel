@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\panel\resources\views\superadmin\pages\danisman\edit.blade.php ENDPATH**/ ?>

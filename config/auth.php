@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'danisman' => [
+            'driver' => 'session',
+            'provider' => 'danisman',
+        ],
+        
     ],
 
     /*
@@ -63,6 +73,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+        'danisman' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Danisman::class,
         ],
 
         // 'users' => [

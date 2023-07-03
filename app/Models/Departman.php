@@ -13,4 +13,6 @@ class Departman extends Model
     public function Ulke(){
         return $this->hasOne(CountriesList::class,'id','ulke_id');
     }
+
+ 
 }

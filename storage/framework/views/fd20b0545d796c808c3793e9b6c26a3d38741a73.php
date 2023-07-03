@@ -84,8 +84,8 @@
                         <span data-key="t-pages">DANIŞMAN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter" key="t-starter-page">DANIŞMAN EKLE</a></li>
-                        <li><a href="pages-maintenance" key="t-maintenance">DANIŞMANLAR</a></li>
+                        <li><a href="<?php echo e(route('danisman.add')); ?>" key="t-starter-page">DANIŞMAN EKLE</a></li>
+                        <li><a href="<?php echo e(route('danisman.list')); ?>" key="t-maintenance">DANIŞMANLAR</a></li>
                     </ul>
                 </li>
 
@@ -95,8 +95,8 @@
                         <span data-key="t-pages">ÖĞRENCİ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter" key="t-starter-page">ÖĞRENCİ EKLE</a></li>
-                        <li><a href="pages-maintenance" key="t-maintenance">ÖĞRENCİLER</a></li>
+                        <li><a href="<?php echo e(route('ogrenci.add')); ?>" key="t-starter-page">ÖĞRENCİ EKLE</a></li>
+                        <li><a href="<?php echo e(route('ogrenci.list')); ?>" key="t-maintenance">ÖĞRENCİLER</a></li>
                     </ul>
                 </li>
 

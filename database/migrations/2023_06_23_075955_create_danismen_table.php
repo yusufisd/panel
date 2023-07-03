@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email');
+            $table->string('password');
             $table->string('phone');
             $table->integer('department_id');
             $table->timestamps();

@@ -1,0 +1,42 @@
+@extends('layouts.master')
+@section('title')
+    Dil Sınavı Ekle
+@endsection
+@section('css')
+    <link href="{{ URL::asset('/assets/libs/admin-resources/admin-resources.min.css') }}" rel="stylesheet">
+@endsection
+@section('content')
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" style="background-color: gray">
+                <h4 class="card-title" style="color:white">DİL SINAVI EKLE</h4>
+            </div><br>
+            <div class="card-body">
+                <form action="{{route('dil_sinavi.store')}}" method="POST">
+                    @csrf
+                    <div class="row container">
+                        <input placeholder="İsim..." type="text" class="form-control" name="name" id="">
+                    </div><br><br>
+                    <div>
+                        <input  type="submit" value="EKLE" class="btn btn-primary" name="" id="">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('script')
+    <!-- JAVASCRIPT -->
+    <script src="{{ URL::asset('/assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/metismenu/metisMenu2.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/node-waves/node-waves.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/feather-icons/feather-icons.min.js') }}"></script>
+    <!-- pace js -->
+    <script src="{{ URL::asset('assets/libs/pace-js/pace-js.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+@endsection

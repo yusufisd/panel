@@ -32,139 +32,147 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-md-6">
-                        <?php echo $__env->yieldContent('content'); ?>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-xl-6 col-md-6">
-                                <!-- card -->
-                                <div class="card card-h-100">
-                                    <!-- card body -->
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="text-muted mb-3 lh-1 d-block text-truncate">DEPARTMANLAR</span>
-                                                <hr>
-                                                <h3 style="text-align: center" class="mb-3">
-                                                    <span class="counter-value" data-target="10">0</span>
-                                                </h3>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card body -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
-
-                            <div class="col-xl-6 col-md-6">
-                                <!-- card -->
-                                <div class="card card-h-100">
-                                    <!-- card body -->
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="text-muted mb-3 lh-1 d-block text-truncate">DANIŞMANLAR</span>
-                                                <hr>
-                                                <h3 style="text-align: center" class="mb-3">
-                                                    <span class="counter-value" data-target="52">0</span>
-                                                </h3>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card body -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
+                    <?php if(!Route::is('index')): ?>
+                        <div class="col-md-8">
+                            <?php echo $__env->yieldContent('content'); ?>
                         </div>
-                        <br>
-
-                        <div class="row">
-                            <div class="col-xl-6 col-md-6">
-                                <!-- card -->
-                                <div class="card card-h-100">
-                                    <!-- card body -->
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="text-muted mb-3 lh-1 d-block text-truncate">ÖĞRENCİLER</span>
-                                                <hr>
-                                                <h3 style="text-align: center" class="mb-3">
-                                                    <span class="counter-value" data-target="164">0</span>
-                                                </h3>
-                                                <hr>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                    <!-- card -->
+                                    <div class="card card-h-100">
+                                        <!-- card body -->
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <span
+                                                        class="text-muted mb-3 lh-1 d-block text-truncate">DEPARTMANLAR</span>
+                                                    <hr>
+                                                    <h3 style="text-align: center" class="mb-3">
+                                                        <span class="counter-value" data-target="<?php echo e(departmanCount()); ?>">0</span>
+                                                    </h3>
+                                                    <hr>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div><!-- end card body -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
 
-                            <div class="col-xl-6 col-md-6">
-                                <!-- card -->
-                                <div class="card card-h-100">
-                                    <!-- card body -->
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="text-muted mb-3 lh-1 d-block text-truncate">AKADEMİK PROGRAMLAR</span>
-                                                <hr>
-                                                <h3 style="text-align: center" class="mb-3">
-                                                    <span class="counter-value" data-target="24">0</span>
-                                                </h3>
-                                                <hr>
+                                <div class="col-xl-6 col-md-6">
+                                    <!-- card -->
+                                    <div class="card card-h-100">
+                                        <!-- card body -->
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <span
+                                                        class="text-muted mb-3 lh-1 d-block text-truncate">DANIŞMANLAR</span>
+                                                    <hr>
+                                                    <h3 style="text-align: center" class="mb-3">
+                                                        <span class="counter-value" data-target="<?php echo e(danismanCount()); ?>">0</span>
+                                                    </h3>
+                                                    <hr>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div><!-- end card body -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                    <!-- card -->
+                                    <div class="card card-h-100">
+                                        <!-- card body -->
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <span
+                                                        class="text-muted mb-3 lh-1 d-block text-truncate">ÖĞRENCİLER</span>
+                                                    <hr>
+                                                    <h3 style="text-align: center" class="mb-3">
+                                                        <span class="counter-value" data-target="<?php echo e(ogrenciCount()); ?>">0</span>
+                                                    </h3>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+
+                                <div class="col-xl-6 col-md-6">
+                                    <!-- card -->
+                                    <div class="card card-h-100">
+                                        <!-- card body -->
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <span class="text-muted mb-3 lh-1 d-block text-truncate">AKADEMİK
+                                                        PROGRAMLAR</span>
+                                                    <hr>
+                                                    <h3 style="text-align: center" class="mb-3">
+                                                        <span class="counter-value" data-target="<?php echo e(akademikCount()); ?>">0</span>
+                                                    </h3>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                    <!-- card -->
+                                    <div class="card card-h-100">
+                                        <!-- card body -->
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <span class="text-muted mb-3 lh-1 d-block text-truncate">EĞİTİM
+                                                        PROGRAMLARI</span>
+                                                    <hr>
+                                                    <h3 style="text-align: center" class="mb-3">
+                                                        <span class="counter-value" data-target="<?php echo e(egitimCount()); ?>">0</span>
+                                                    </h3>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+
+                                <div class="col-xl-6 col-md-6">
+                                    <!-- card -->
+                                    <div class="card card-h-100">
+                                        <!-- card body -->
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <span class="text-muted mb-3 lh-1 d-block text-truncate">DİL
+                                                        SINAVLARI</span>
+                                                    <hr>
+                                                    <h3 style="text-align: center" class="mb-3">
+                                                        <span class="counter-value" data-target="<?php echo e(dilCount()); ?>">0</span>
+                                                    </h3>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+                            </div>
+
                         </div>
-                        <br>
-
-                        <div class="row">
-                            <div class="col-xl-6 col-md-6">
-                                <!-- card -->
-                                <div class="card card-h-100">
-                                    <!-- card body -->
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="text-muted mb-3 lh-1 d-block text-truncate">EĞİTİM PROGRAMLARI</span>
-                                                <hr>
-                                                <h3 style="text-align: center" class="mb-3">
-                                                    <span class="counter-value" data-target="32">0</span>
-                                                </h3>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card body -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
-
-                            <div class="col-xl-6 col-md-6">
-                                <!-- card -->
-                                <div class="card card-h-100">
-                                    <!-- card body -->
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1">
-                                                <span
-                                                    class="text-muted mb-3 lh-1 d-block text-truncate">DİL SINAVLARI</span>
-                                                <hr>
-                                                <h3 style="text-align: center" class="mb-3">
-                                                    <span class="counter-value" data-target="7">0</span>
-                                                </h3>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card body -->
-                                </div><!-- end card -->
-                            </div><!-- end col -->
+                    <?php endif; ?>
+                    <?php if(Route::is('index')): ?>
+                        <div class="col-md-12">
+                            <?php echo $__env->yieldContent('content'); ?>
                         </div>
+                    <?php endif; ?>
 
-                    </div>
                 </div>
 
             </div>
