@@ -10,9 +10,8 @@
                 <li class="menu-title" data-key="t-menu">PANEL</li>
 
                 <li>
-                    <a href="index">
+                    <a href="<?php echo e(route('danisman.index')); ?>">
                         <i data-feather="home"></i>
-                        <span class="badge rounded-pill bg-soft-success text-success float-end">9+</span>
                         <span data-key="t-dashboard">ANASAYFA</span>
                     </a>
                 </li>
@@ -85,28 +84,28 @@
                 <li class="menu-title" data-key="t-pages">MUHASEBE</li>
 
                 <li>
-                    <a href="javascript: void(0);" >
+                    <a href="<?php echo e(route('danisman.borc.ekle')); ?>" >
                         <i data-feather="file-text"></i>
                         <span data-key="t-pages">ÖĞRENCİ BORÇLANDIR</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" >
+                    <a href="<?php echo e(route('danisman.tahsilat.ekle')); ?>" >
                         <i data-feather="file-text"></i>
                         <span data-key="t-pages">ÖĞRENCİ TAHSİLAT</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" >
+                    <a href="<?php echo e(route('danisman.borc.list')); ?>" >
                         <i data-feather="file-text"></i>
                         <span data-key="t-pages">BORÇ LİSTESİ</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" >
+                    <a href="<?php echo e(route('danisman.tahsilat.list')); ?>" >
                         <i data-feather="file-text"></i>
                         <span data-key="t-pages">TAHSİLAT LİSTESİ</span>
                     </a>

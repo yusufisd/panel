@@ -24,7 +24,9 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $data = Student::latest()->get();
+        $id = Auth::guard('danisman')->user()->id;
+        
+        $data = Student::where('danisman_id',$id)->get();
         return view('danisman.pages.ogrenci.list', compact('data'));
     }
 
@@ -61,7 +63,8 @@ class StudentController extends Controller
             "passport_no" => "required",
             "father_name" => "required",
             "mother_name" => "required",
-            "bolum" => "required",
+            "okul_il" => "required",
+            "okul" => "required",
             "sinif" => "required",
             "prosedur" => "required",
             "email" => "required",
@@ -75,7 +78,8 @@ class StudentController extends Controller
             "passport_no.required" => "Pasaport numarası boş bırakılamaz!",
             "father_name.required" => "Baba adı boş bırakılamaz",
             "mother_name.required" => "Anne adı boş bırakılamaz",
-            "bolum.required" => "Bölüm boş bırakılamaz",
+            "okul_il.required" => "Okuduğu şehir boş bırakılamaz",
+            "okul.required" => "Okul boş bırakılamaz",
             "sinif.required" => "Sınıf boş bırakılamaz",
             "prosedur" => "Prosedür boş bırakılamaz",
             "email.required" => "Email boş bırakılamaz",
@@ -91,11 +95,9 @@ class StudentController extends Controller
         $new->passport_no = $request->passport_no;
         $new->father_name = $request->father_name;
         $new->mother_name = $request->mother_name;
-        $new->bolum = $request->bolum;
+        $new->okul_il = $request->okul_il;
+        $new->okul = $request->okul;
         $new->sinif = $request->sinif;
-        $new->uni_il_id = $request->uni_il_id;
-        $new->uni_id = $request->uni_id;
-        $new->fakulte_id = $request->fakulte_id;
         $new->genel_program = $request->genel_program;
         $new->akademik_prgram_id = $request->akademik_program;
         $new->egitim_program_id = $request->egitim_programi;
@@ -135,7 +137,7 @@ class StudentController extends Controller
         $egitim_programi = EgitimProgram::OrderBy('id', 'asc')->get();
         $dil_sinavi = DilSinavi::OrderBy('id', 'asc')->get();
         $iller = Iller::orderBy('il_name','asc')->get();
-        $departman = Departman::latest()->get();
+        $departman = Departman::orderBy('name','asc')->get();
         $data = Student::where('id', $id)->get();
         return view('danisman.pages.ogrenci.edit', compact('data','departman','iller','genel_program','akademik_program','egitim_programi','dil_sinavi'));
     }
@@ -165,21 +167,11 @@ class StudentController extends Controller
         return redirect()->route('ogrenci.list');
     }
 
-    public function uni_getir(Request $request)
-    {
-        $data = Uniler::where('il_id', $request->id)->get();
-        return $data;
-    }
-
-    public function fakulte_getir(Request $request)
-    {
-        $data = Fakulteler::where('uni_id', $request->id)->get();
-        return $data;
-    }
 
     public function detay($id){
-        $basvurulacak = BasvurulacakUniversiteler::where('ogrenci_id',$id)->get();
+        $basvurulan = BasvurulacakUniversiteler::where('status',1)->where('ogrenci_id',$id)->get();
+        $basvurulacak = BasvurulacakUniversiteler::where('status',0)->where('ogrenci_id',$id)->get();
         $data = Student::where('id',$id)->get();
-        return view('danisman.pages.ogrenci.detail',compact('data','basvurulacak'));
+        return view('danisman.pages.ogrenci.detail',compact('data','basvurulacak','basvurulan'));
     }
 }

@@ -11,10 +11,7 @@
                         <div class="w-100">
                             <div class="d-flex flex-column h-100">
                                 <div class="mb-4 mb-md-5 text-center">
-                                    <a href="{{ url('/') }}" class="d-block auth-logo">
-                                        <img src="{{ URL::asset('assets/images/logo-sm.svg') }}" alt=""
-                                            height="28"> <span class="logo-txt">SÜPER ADMİN</span>
-                                    </a>
+                                    <span class="logo-txt">PLUS EDUCATİON PORTAL</span>
                                 </div>
                                 <div class="auth-content my-auto">
                                     <div class="text-center">
@@ -33,7 +30,7 @@
                                         @csrf
                                         <div class="form-floating form-floating-custom mb-4">
                                             <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                                value="{{ old('email', 'admin@themesdesign.com') }}" id="input-username"
+                                                 id="input-username"
                                                 placeholder="Email" name="email">
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -50,7 +47,7 @@
                                             <input type="password"
                                                 class="form-control pe-5 @error('password') is-invalid @enderror"
                                                 name="password" id="password-input" placeholder="Enter Password"
-                                                value="123456">
+                                                >
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -69,14 +66,14 @@
 
                                         <div class="mb-3">
                                             <button class="btn btn-primary w-100 waves-effect waves-light"
-                                                type="submit">Log In</button>
+                                                type="submit">Giriş Yap</button>
                                         </div>
                                     </form>
 
 
                                 </div>
                                 <div class="mt-4 mt-md-5 text-center">
-                                    <p class="mb-0">© Copyright
+                                    <p class="mb-0">© Copyright 2023
                                     </p>
                                 </div>
                             </div>
@@ -104,7 +101,7 @@
                         <div class="row justify-content-center align-items-end">
                             <div class="col-xl-7">
                                 <div class="p-0 p-sm-4 px-xl-0">
-                                    
+
                                 </div>
                             </div>
                         </div>

@@ -19,6 +19,9 @@ return new class extends Migration
             $table->integer('ulke_id');
             $table->string('universite');
             $table->string('bolum');
+            $table->integer('durum')->default(0);
+            $table->integer('status')->default(0);
+
             $table->timestamps();
         });
     }

@@ -28,6 +28,7 @@
                             <thead>
                                 <tr>
                                     <th>AD SOYAD</th>
+                                    <th>BAKİYE</th>
                                     <th>DEPARTMAN</th>
                                     <th>ÜLKE</th>
                                     <th>EMAİL</th>
@@ -40,7 +41,12 @@
                             <tbody>
                                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td><a href="<?php echo e(route('danisman.ogrenci.detay',$item->id)); ?>"> <?php echo e(strtoupper($item->name)); ?> <?php echo e(strtoupper($item->surname)); ?> </a></td>
+                                        <td>
+                                            <a href="<?php echo e(route('danisman.ogrenci.detay',$item->id)); ?>"> 
+                                                <?php echo e(strtoupper($item->name)); ?> <?php echo e(strtoupper($item->surname)); ?> 
+                                            </a>
+                                        </td>
+                                        <td><?php echo e(strtoupper($item->bakiye)); ?> TL</td>
                                         <td><?php echo e(strtoupper($item->Danisman->Departman->name)); ?></td>
                                         <td><?php echo e(strtoupper($item->Danisman->Ulke())); ?></td>
                                         <td><?php echo e(($item->email)); ?></td>

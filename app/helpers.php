@@ -43,7 +43,17 @@ if (! function_exists('egitimCount')) {
     }
 }
 
+if (! function_exists('ogrenciCount2')) {
+    function ogrenciCount2($id) {
+        return Student::where('danisman_id',$id)->count();
+    }
+}
 
+if (! function_exists('danismanCount2')) {
+    function danismanCount2($id) {
+        return Danisman::where('department_id',$id)->count();
+    }
+}
 
 
 

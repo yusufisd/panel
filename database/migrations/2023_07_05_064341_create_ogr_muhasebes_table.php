@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->integer('danisman_id');
+        Schema::create('ogr_muhasebes', function (Blueprint $table) {
+            $table->id();
+            $table->integer('ogr_id');
+            $table->integer('type');
+            $table->integer('tutar');
+            $table->string('description')->nullable();
+            $table->integer('danisman_id')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,9 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->integer('danisman_id');
-            
-        });
+        Schema::dropIfExists('ogr_muhasebes');
     }
 };

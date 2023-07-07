@@ -4,20 +4,14 @@
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <a href="index" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="<?php echo e(URL::asset('assets/images/logo-sm.svg')); ?>" alt="" height="30">
-                    </span>
                     <span class="logo-lg">
-                        <img src="<?php echo e(URL::asset('assets/images/logo-sm.svg')); ?>" alt="" height="24"> <span class="logo-txt">Dason</span>
+                        <span class="logo-txt" style="font-size10px">pluseducation</span>
                     </span>
                 </a>
 
                 <a href="index" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="<?php echo e(URL::asset('assets/images/logo-sm.svg')); ?>" alt="" height="30">
-                    </span>
                     <span class="logo-lg">
-                        <img src="<?php echo e(URL::asset('assets/images/logo-sm.svg')); ?>" alt="" height="24"> <span class="logo-txt">Dason</span>
+                        <span class="logo-txt" style="font-size10px">pluseducation</span>
                     </span>
                 </a>
             </div>
@@ -62,8 +56,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="apps-contacts-profile"><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> Profil</a>
-                    <a class="dropdown-item" href="auth-lock-screen"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Ayarlar</a>
+                    <a class="dropdown-item" href="<?php echo e(route('settings')); ?>"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Şifreyi Değiştir</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item " href="<?php echo e(route('superadmin.logout')); ?>"><i class="bx bx-power-off font-size-16 align-middle me-1"></i> <span key="t-logout">Çıkış Yap</span></a>
                     

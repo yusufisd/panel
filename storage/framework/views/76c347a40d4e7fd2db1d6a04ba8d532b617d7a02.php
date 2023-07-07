@@ -20,7 +20,7 @@
     ?>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header" style="background-color: gray">
                     <h4 class="card-title" style="color:white">EĞİTİM PROGRAM LİSTESİ</h4>

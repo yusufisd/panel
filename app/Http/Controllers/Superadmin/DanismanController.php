@@ -82,8 +82,9 @@ class DanismanController extends Controller
      */
     public function edit($id)
     {
-        $data = Danisman::find($id);
-        return view('superadmin.pages.danisman.edit',compact('data'));
+        $departman = Departman::orderBy('name','asc')->get();
+        $data = Danisman::where('id',$id)->get();
+        return view('superadmin.pages.danisman.edit',compact('data','departman'));
     }
 
     /**
@@ -97,25 +98,55 @@ class DanismanController extends Controller
     {
         $request->validate([
             "name" => "required",
-            "ulke_id" => "required",
+            "surname" => "required",
+            "phone" => "required",
+            "email" => "required",
+            "departman_id" => "required",
         ],[
-            "name.required" => "Departman ismi boş bırakılamaz.",
-            "ulke_id.required" => "Ülke seçmeyi unuttunuz.",
+            "name.required" => "Danışman ismi boş bırakılamaz.",
+            "surname.required" => "Danışman soyismi boş bırakılamaz.",
+            "phone.required" => "Danışman telefonu boş bırakılamaz.",
+            "email.required" => "Danışman email boş bırakılamaz.",
+            "departman_id.required" => "Departman boş bırakılamaz.",
         ]);
-        Departman::where('id',$request->id)->update([
+        Danisman::where('id',$request->id)->update([
             "name" => $request->name,
-            "ulke_id" => $request->ulke_id,
+            "surname" => $request->surname,
+            "phone" => $request->phone,
+            "department_id" => $request->departman_id,
+            "email" => $request->email,
         ]);
-        Alert::success('Başarılı','Departman güncelleme işlemi başarılı.');
+        Alert::success('Başarılı','Danışman güncelleme işlemi başarılı.');
         return redirect()->route('danisman.list');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function settings($id){
+        $data = Danisman::find($id);
+        return view('superadmin.pages.danisman.settings',compact('data'));
+    }
+    public function settings_post(Request $request){
+        $auth = Danisman::find($request->id);
+        $request->validate([
+            "email" => "required",
+            "old_password" => "required",
+            "password" => "required",
+        ],[
+            "email.required" => "Email boş bırakılamaz.",
+            "old_password.required" => "Önceki şifre boş bırakılamaz.",
+            "password.required" => "Şifre boş bırakılamaz.",
+        ]);
+
+        if(Hash::check($request->old_password,$auth->password)){
+            $auth->update([
+                "email" => $request->email,
+                "password" => Hash::make($request->password),
+            ]);
+            Alert::success('Danışman güvenlik ayarları değiştirildi.');
+            return redirect()->route('danisman.list');
+        }else{
+            return back()->withErrors('Önceki şifre doğru değil.');
+        }
+    }
     public function destroy($id)
     {
         Departman::where('id',$id)->delete();

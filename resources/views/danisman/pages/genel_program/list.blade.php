@@ -44,7 +44,7 @@
                                     <td style="width:50px">{{ $no++ }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td style="width:150px">
-                                        <a href="{{ route('genel_program.edit', $item->id) }}">
+                                        <a href="{{ route('danisman.genel_program.edit', $item->id) }}">
                                             <button type="button" class="btn btn-primary">Düzenle</button>
                                         </a>
                                         <button onclick="test({{ $item->id }})" type="button"
@@ -74,7 +74,7 @@
                 confirmButtonText: 'Evet, sil!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "{{ route('genel_program.destroy') }}/" + d;
+                    window.location.href = "{{ route('danisman.genel_program.destroy') }}/" + d;
                 }
             })
         }

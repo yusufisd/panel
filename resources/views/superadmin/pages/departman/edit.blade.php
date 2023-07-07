@@ -18,18 +18,22 @@
                         <div class="col-md-6">
                             <label for="">Ülke</label>
                             <select name="ulke_id" class="form-control" id="">
-                                <option  value="1">hırcat</option>
-                                <option value="2">hırcat</option>
+                                @foreach ($ulkeler as $ulke)
+                                    
+                                <option {{$data->ulke_id == $ulke->id ? 'selected' : ''}} value="{{$ulke->id}}">{{$ulke->country_name}}</option>
+
+                                @endforeach
+
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="">İsim</label>
                             <input value="{{$data->name}}" type="text" class="form-control" name="name" id="">
-
+<input type="hidden" value="{{$data->id}}" name="id" id="">
                         </div>
                     </div><br>
                     <div>
-                        <input type="submit" value="EKLE" class="btn btn-primary" name="" id="">
+                        <input type="submit" value="KAYDET" class="btn btn-primary" name="" id="">
                     </div>
                 </form>
             </div>

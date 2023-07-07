@@ -28,6 +28,7 @@
                             <thead>
                                 <tr>
                                     <th>AD SOYAD</th>
+                                    <th>BAKİYE</th>
                                     <th>DEPARTMAN</th>
                                     <th>ÜLKE</th>
                                     <th>EMAİL</th>
@@ -40,7 +41,12 @@
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr>
-                                        <td><a href="{{route('danisman.ogrenci.detay',$item->id)}}"> {{ strtoupper($item->name)}} {{ strtoupper($item->surname)}} </a></td>
+                                        <td>
+                                            <a href="{{route('danisman.ogrenci.detay',$item->id)}}"> 
+                                                {{ strtoupper($item->name)}} {{ strtoupper($item->surname)}} 
+                                            </a>
+                                        </td>
+                                        <td>{{ strtoupper($item->bakiye) }} TL</td>
                                         <td>{{ strtoupper($item->Danisman->Departman->name) }}</td>
                                         <td>{{ strtoupper($item->Danisman->Ulke()) }}</td>
                                         <td>{{ ($item->email) }}</td>

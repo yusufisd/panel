@@ -22,6 +22,9 @@
             cursor: pointer;
 
         }
+        #kel:hover{
+            cursor: pointer;
+        }
     </style>
 
     <div class="row">
@@ -156,51 +159,38 @@
                             <br>
 
                             <div class="row container">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <p style="text-align: right" for="">OKUDUĞU ŞEHİR :</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <h5 style="text-align: left">{{ strtoupper($item->Sehir->il_name) }}</h5>
+                                            <h5 style="text-align: left">{{ strtoupper($item->sehir->il_name) }}</h5>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p style="text-align: right" for="">ÜNİVERSİTE :</p>
+                                            <p style="text-align: right" for="">OKUL :</p>
                                         </div>
                                         <div class="col-md-6">
                                             <h5 style="text-align: left;width:100%">
-                                                {{ strtoupper($item->Universite->uni_name) }}</h5>
+                                                {{ strtoupper($item->okul) }}</h5>
                                         </div>
                                     </div>
 
                                 </div>
-                            </div>
-                            <hr>
 
-                            <div class="row container">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p style="text-align: right" for="">FAKÜLTE :</p>
+                                            <p style="text-align: right" for="">SINIF :</p>
                                         </div>
                                         <div class="col-md-6">
                                             <h5 style="text-align: left">
-                                                {{ strtoupper($item->Fakulte->fakulte_ad) }}
+                                                {{ strtoupper($item->sinif) }}
                                             </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p style="text-align: right" for="">BÖLÜM :</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h5 style="text-align: left">{{ strtoupper($item->bolum) }}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -213,7 +203,8 @@
                             <div class="buton">
                                 <button type="button" class="btn btn-success">
                                     <a href="{{ route('danisman.basvurulcak.add', $item->id) }}">
-                                        <span style="font-size:20px; padding:0;margin:0;color:white">+</span><span style="color:white"> EKLE</span>
+                                        <span
+                                            style="color:white"> EKLE</span>
                                     </a>
                                 </button>
                             </div><br>
@@ -231,11 +222,14 @@
 
                                     @foreach ($basvurulacak as $basvuru)
                                         <tr>
-                                            <td>{{ $basvuru->Ulke->country_name }}</td>
-                                            <td>{{ $basvuru->universite }}</td>
-                                            <td>{{ $basvuru->bolum }}</td>
-                                            <td style="width:100px">
-                                                <a href="{{route('danisman.basvurulcak.edit',$basvuru->id)}}">
+                                            <td>{{ strtoupper($basvuru->Ulke->country_name) }}</td>
+                                            <td>{{ strtoupper($basvuru->universite) }}</td>
+                                            <td>{{ strtoupper($basvuru->bolum) }}</td>
+                                            <td style="width:210px">
+                                                <button onclick="onay({{$basvuru->id}})" style="width: 120px" type="button"
+                                                    class="btn btn-info">BAŞVURULDU</button>
+                                                &nbsp;
+                                                <a href="{{ route('danisman.basvurulcak.edit', $basvuru->id) }}">
                                                     <i style="color:blue; font-size:20px" class="fas fa-edit"></i>
                                                 </a onclick="test(2)">&nbsp;
                                                 <i style="color:red; font-size:20px" class="fas fa-trash-alt"></i>
@@ -264,17 +258,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($basvurulan as $basvuru)
+                                        
                                     <tr>
-                                        <td>AMERİKA</td>
-                                        <td>WASHİNGTON UNİVERSİTY</td>
-                                        <td>fizik</td>
+                                        <td>{{ strtoupper($basvuru->Ulke->country_name) }}</td>
+                                        <td>{{ strtoupper($basvuru->universite) }}</td>
+                                        <td>{{ strtoupper($basvuru->bolum) }}</td>
 
+                                        @if($basvuru->durum == 0)
+                                        <td><span style="color: ORANGE">BEKLİYOR</span></td>
+                                        @endif
+                                        @if($basvuru->durum == 1)
                                         <td><span style="color: lightgreen">ONAYLANDI</span></td>
+                                        @endif
+                                        @if($basvuru->durum == 2)
+                                        <td><span style="color: red">REDDEDİLDİ</span></td>
+                                        @endif
                                         <td style="width:150px">
 
-                                            <i style="color:red; font-size:20px" class="fas fa-window-close"></i>
+                                            <i id="kel" onclick="durum_red({{$basvuru->id}})" style="color:red; font-size:20px" class="fas fa-window-close"></i>
                                             &nbsp;
-                                            <i style="color:lightgreen; font-size:20px" class="fas fa-check"></i>
+                                            <i id="kel" onclick="durum_onay({{$basvuru->id}})" style="color:lightgreen; font-size:20px" class="fas fa-check"></i>
                                             &nbsp;
 
                                             <a href="http://localhost:8000/superadmin/departman/duzenle/2">
@@ -284,6 +288,9 @@
 
                                         </td>
                                     </tr>
+
+                                    @endforeach
+
 
                                 </tbody>
                             </table>
@@ -297,6 +304,49 @@
 @endsection
 @section('script')
     <script>
+        function durum_onay(d){
+            Swal.fire({
+                title: 'Seçilen Üniversite Onaylansın mı?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Tamam'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ route('danisman.basvurulcak.durum.onayla') }}/" + d;
+                }
+            })
+        }
+
+        function durum_red(d){
+            Swal.fire({
+                title: 'Seçilen Üniversite Reddeilsin mı?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Tamam'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ route('danisman.basvurulcak.durum.reddet') }}/" + d;
+                }
+            })
+        }
+        function onay(d){
+            Swal.fire({
+                title: 'Seçilen İçerik Başvurulan Üniversitelere Taşınacak',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Tamam'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ route('danisman.basvurulcak.statu.degis') }}/" + d;
+                }
+            })
+        }
         function deneme() {
             document.getElementById("genel_bilgiler").style.display = "none";
             document.getElementById("basvurulan").style.display = "none";

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('danisman.layouts.master')
 @section('title')
     Genel Program Düzenle
 @endsection

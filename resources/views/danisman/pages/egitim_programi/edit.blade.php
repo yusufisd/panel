@@ -9,7 +9,7 @@
 @section('content')
 
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-header" style="background-color: brown">
                 <h4 class="card-title" style="color:white">EĞİTİM PROGRAMI DÜZENLE</h4>

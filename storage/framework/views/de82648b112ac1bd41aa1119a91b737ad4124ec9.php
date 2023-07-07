@@ -11,10 +11,7 @@
                         <div class="w-100">
                             <div class="d-flex flex-column h-100">
                                 <div class="mb-4 mb-md-5 text-center">
-                                    <a href="<?php echo e(url('/')); ?>" class="d-block auth-logo">
-                                        <img src="<?php echo e(URL::asset('assets/images/logo-sm.svg')); ?>" alt=""
-                                            height="28"> <span class="logo-txt">DANIŞMAN</span>
-                                    </a>
+                                    <span class="logo-txt">PLUS EDUCATİON PORTAL</span>
                                 </div>
                                 <div class="auth-content my-auto">
                                     <div class="text-center">
@@ -41,7 +38,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                                value="<?php echo e(old('email', 'admin@themesdesign.com')); ?>" id="input-username"
+                                                 id="input-username"
                                                 placeholder="Email" name="email">
                                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -72,7 +69,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
                                                 name="password" id="password-input" placeholder="Enter Password"
-                                                value="123456">
+                                                >
                                             <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -105,7 +102,7 @@ unset($__errorArgs, $__bag); ?>
 
                                 </div>
                                 <div class="mt-4 mt-md-5 text-center">
-                                    <p class="mb-0">© Copyright
+                                    <p class="mb-0">© Copyright 2023
                                     </p>
                                 </div>
                             </div>
@@ -134,7 +131,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col-xl-7">
                                 <div class="p-0 p-sm-4 px-xl-0">
                                     <div id="reviewcarouselIndicators" class="carousel slide" data-bs-ride="carousel">
-                                        
+
                                     </div>
                                     <!-- end review carousel -->
                                 </div>

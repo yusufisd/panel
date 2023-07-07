@@ -43,7 +43,7 @@
                                         <td style="width:50px"><?php echo e($no++); ?></td>
                                         <td><?php echo e($item->name); ?></td>
                                         <td style="width:150px">
-                                            <a href="<?php echo e(route('dil_sinavi.edit', $item->id)); ?>">
+                                            <a href="<?php echo e(route('danisman.dil_sinavi.edit', $item->id)); ?>">
                                                 <button type="button" class="btn btn-primary">Düzenle</button>
                                             </a>
                                             <button onclick="test(<?php echo e($item->id); ?>)" type="button"
@@ -73,7 +73,7 @@
                     confirmButtonText: 'Evet, sil!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "<?php echo e(route('dil_sinavi.destroy')); ?>/" + d;
+                        window.location.href = "<?php echo e(route('danisman.dil_sinavi.destroy')); ?>/" + d;
                     }
                 })
             }

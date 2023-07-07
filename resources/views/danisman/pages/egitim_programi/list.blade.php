@@ -43,7 +43,7 @@
                                     <td style="width:50px">{{ $no++ }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td style="width:150px">
-                                        <a href="{{ route('egitim_programi.edit', $item->id) }}">
+                                        <a href="{{ route('danisman.egitim_programi.edit', $item->id) }}">
                                             <button type="button" class="btn btn-primary">Düzenle</button>
                                         </a>
                                         <button onclick="test({{ $item->id }})" type="button"
@@ -73,7 +73,7 @@
                 confirmButtonText: 'Evet, sil!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "{{ route('egitim_programi.destroy') }}/" + d;
+                    window.location.href = "{{ route('danisman.egitim_programi.destroy') }}/" + d;
                 }
             })
         }

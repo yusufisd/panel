@@ -19,10 +19,12 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">DEPARTMANLAR</span><hr>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">DEPARTMANLAR</span>
+                            <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="<?php echo e($department_count); ?>">0</span>
-                            </h3><hr>
+                            </h3>
+                            <hr>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -36,10 +38,12 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">DANIŞMANLAR</span><hr>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">DANIŞMANLAR</span>
+                            <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="<?php echo e($supervisor_count); ?>">0</span>
-                            </h3><hr>
+                            </h3>
+                            <hr>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -53,10 +57,12 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">ÖĞRENCİLER</span><hr>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">ÖĞRENCİLER</span>
+                            <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="<?php echo e($student_count); ?>">0</span>
-                            </h3><hr>
+                            </h3>
+                            <hr>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -70,10 +76,12 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">AKADEMİK PROGRAM</span><hr>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">AKADEMİK PROGRAM</span>
+                            <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="<?php echo e($akademik_count); ?>">0</span>
-                            </h3><hr>
+                            </h3>
+                            <hr>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -87,10 +95,12 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">EĞİTİM PROGRAMI</span><hr>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">EĞİTİM PROGRAMI</span>
+                            <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="<?php echo e($egitim_count); ?>">0</span>
-                            </h3><hr>
+                            </h3>
+                            <hr>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -104,10 +114,12 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">DİL SINAVI</span><hr>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">DİL SINAVI</span>
+                            <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="<?php echo e($dil_count); ?>">0</span>
-                            </h3><hr>
+                            </h3>
+                            <hr>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -123,7 +135,9 @@
                     <h4 class="card-title mb-0 flex-grow-1">DEPARTMAN LİSTESİ</h4>
                     <div class="flex-shrink-0">
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            <a href="<?php echo e(route('departman.list')); ?>">
+                                <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            </a>
                         </div>
                     </div>
                 </div><!-- end card header -->
@@ -132,20 +146,19 @@
                     <div class="px-3" data-simplebar style="max-height: 386px;">
 
                         <?php $__currentLoopData = $departmanlar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            
-                        <div class="d-flex align-items-center pb-4">
-                            <div class="flex-grow-1">
-                                <h5 class="font-size-15 mb-1"><a href="" class="text-dark"> <?php echo e($item->name); ?></a></h5>
-                            </div>
-                            <div >
-                                <span class="text-muted"> <?php echo e($item->Ulke->country_name); ?></span>
-                                
-                            </div>
-                        </div>
+                            <div class="d-flex align-items-center pb-4">
+                                <div class="flex-grow-1">
+                                    <h5 class="font-size-15 mb-1"><a href="" class="text-dark">
+                                            <?php echo e($item->name); ?></a></h5>
+                                </div>
+                                <div>
+                                    <span class="text-muted"> <?php echo e($item->Ulke->country_name); ?></span>
 
+                                </div>
+                            </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                       
+
                     </div>
                 </div>
                 <!-- end card body -->
@@ -160,7 +173,9 @@
                     <h4 class="card-title mb-0 flex-grow-1">DANIŞMAN LİSTESİ</h4>
                     <div class="flex-shrink-0">
                         <div class="dropdown align-self-start">
-                            <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            <a href="<?php echo e(route('danisman.list')); ?>">
+                                <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            </a>
                         </div>
                     </div>
 
@@ -172,37 +187,39 @@
                             <tbody>
 
                                 <?php $__currentLoopData = $danismanlar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <h5 class="font-size-15"><a href="" class="text-dark"><?php echo e($item->name); ?> <?php echo e($item->surname); ?></a></h5>
-                                            <span class="text-muted"><?php echo e($item->email); ?></span>
-                                        </div>
-                                    </td>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <h5 class="font-size-15"><a href=""
+                                                        class="text-dark"><?php echo e($item->name); ?> <?php echo e($item->surname); ?></a>
+                                                </h5>
+                                                <span class="text-muted"><?php echo e($item->email); ?></span>
+                                            </div>
+                                        </td>
 
-                                    <td>
-                                        <p class="mb-1"><a href="" class="text-dark"><?php echo e($item->Departman->name); ?></a></p>
-                                        <span class="text-muted mt-1"> <?php echo e($item->phone); ?></span>
-                                    </td>
+                                        <td>
+                                            <p class="mb-1"><a href=""
+                                                    class="text-dark"><?php echo e($item->Departman->name); ?></a></p>
+                                            <span class="text-muted mt-1"> <?php echo e($item->phone); ?></span>
+                                        </td>
 
-                                    <td>
-                                        <div class="flex-shrink-0 text-end">
-                                            <div class="dropdown align-self-start">
-                                                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">DETAY</a>
-                                                    <a class="dropdown-item" href="#">DÜZENLE</a>
+                                        <td>
+                                            <div class="flex-shrink-0 text-end">
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">DETAY</a>
+                                                        <a class="dropdown-item" href="#">DÜZENLE</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                    </td>
-                                </tr>
 
+                                        </td>
+                                    </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
@@ -222,7 +239,9 @@
                     <h4 class="card-title mb-0 flex-grow-1">ÖĞRENCİ LİSTESİ</h4>
                     <div class="flex-shrink-0">
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            <a href="<?php echo e(route('ogrenci.list')); ?>">
+                                <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            </a>
                         </div>
                     </div>
                 </div><!-- end card header -->
@@ -232,36 +251,34 @@
 
 
                         <?php $__currentLoopData = $ogrenciler; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            
-
-                        <div class="d-flex align-items-center pb-4">
-                            <div class="avatar-md me-4">
-                                <img src="<?php echo e(URL::asset('./assets/images/users/avatar-2.jpg')); ?>"
-                                    class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <div class="flex-grow-1">
-                                <h5 class="font-size-15 mb-1"><a href="" class="text-dark"><?php echo e($item->name); ?>  <?php echo e($item->surname); ?></a></h5>
-                                <span class="text-muted"><?php echo e($item->email); ?></span>
-                            </div>
-                            <div class="flex-shrink-0 text-end">
-                                <div class="dropdown align-self-start">
-                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Copy</a>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Forward</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
+                            <div class="d-flex align-items-center pb-4">
+                                <div class="avatar-md me-4">
+                                    <img src="<?php echo e(URL::asset('./assets/images/users/avatar-2.jpg')); ?>"
+                                        class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="font-size-15 mb-1"><a href=""
+                                            class="text-dark"><?php echo e($item->name); ?> <?php echo e($item->surname); ?></a></h5>
+                                    <span class="text-muted"><?php echo e($item->email); ?></span>
+                                </div>
+                                <div class="flex-shrink-0 text-end">
+                                    <div class="dropdown align-self-start">
+                                        <a class="dropdown-toggle" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Copy</a>
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Forward</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                       
+
                     </div>
                 </div>
                 <!-- end card body -->

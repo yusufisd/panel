@@ -93,38 +93,22 @@
 
                         <div class="okul" id="okul" style="display: none">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <label for="">OKUDUĞU ŞEHİR</label>
-                                    <select onchange="test2()" name="uni_il_id" class="form-control" id="uni_il_id">
+                                    <select  name="okul_il" class="form-control" id="okul_il">
                                         <option value="">Lütfen şehir seçin</option>
 
                                         @foreach ($iller as $il)
-                                            <option {{$item->uni_il_id == $il->id ? 'selected' : ''}} value="{{ $il->id }}">{{ strtoupper($il->il_name) }}</option>
+                                            <option {{$item->okul_il == $il->id ? 'selected' : ''}} value="{{ $il->id }}">{{ strtoupper($il->il_name) }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="">ÜNİVERSİTE</label>
-                                    <select onchange="test3()" disabled name="uni_id" class="form-control" id="uni_id">
-                                        <option value="">{{$item->Universite->uni_name}}</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-5">
-                                    <label for="">FAKÜLTE</label>
-                                    <select disabled name="fakulte_id" class="form-control" id="fakulte_id">
-
-                                        <option value="">{{$item->Fakulte->fakulte_ad}}</option>
-
-                                    </select>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="">BÖLÜM</label>
-                                    <input type="text" name="bolum" value="{{$item->bolum}}" class="form-control"
+                                    <label for="">OKUL</label>
+                                    <input type="text" name="okul" value="{{$item->okul}}" class="form-control"
                                         id="">
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <label for="">SINIF</label>
                                     <input type="number" class="form-control" name="sinif" value="{{$item->sinif}}"
                                         id="">

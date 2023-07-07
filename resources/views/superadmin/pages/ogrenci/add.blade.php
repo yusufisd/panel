@@ -81,6 +81,10 @@
                             <label for="">DANIŞMAN</label>
                             <select class="form-control" name="danisman_id" id="">
                                 <option value="">Lütfen danışman seçiniz</option>
+
+                                @foreach ($danisman as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }} {{ $item->surname }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-3">
@@ -88,15 +92,16 @@
                             <input placeholder="Referans..." type="number" class="form-control" name="referance"
                                 id="">
                         </div>
-                        
-                    </div><br><br><hr>
+
+                    </div><br><br>
+                    <hr>
 
                     <h5>OKUL BİLGİLERİ</h5><br>
 
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="">OKUDUĞU ŞEHİR</label>
-                            <select onchange="test2()" name="uni_il_id" class="form-control" id="uni_il_id">
+                            <select  name="okul_il" class="form-control" id="okul_il">
                                 <option value="">Lütfen şehir seçin</option>
 
                                 @foreach ($iller as $item)
@@ -105,34 +110,19 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label for="">ÜNİVERSİTE</label>
-                            <select onchange="test3()" disabled name="uni_id" class="form-control" id="uni_id">
-                                <option value="">Lütfen önce şehir seçin</option>
-                            </select>
+                            <label for="">OKUL</label>
+                            <input type="text" placeholder="Okul..." class="form-control" name="okul" id="">
                         </div>
-                        <div class="col-md-5">
-                            <label for="">FAKÜLTE</label>
-                            <select disabled name="fakulte_id" class="form-control" id="fakulte_id">
-
-                                <option value="">Lütfen önce üniversite seçin</option>
-
-                            </select>
-                        </div>
-
-                    </div><br>
-
-                    <div class="row">
+                        
+                        
                         <div class="col-md-4">
-                            <label for="">BÖLÜM</label>
-                            <input type="text" name="bolum" placeholder="Bölüm..." class="form-control" id="">
-                        </div>
-                        <div class="col-md-2">
                             <label for="">SINIF</label>
                             <input type="number" class="form-control" name="sinif" placeholder="Sınıf..."
                                 id="">
                         </div>
-                    </div><br><br><hr>
-                    
+                    </div><br><br>
+                    <hr>
+
                     <h5>PROGRAM</h5><br>
 
                     <div class="row">
@@ -142,9 +132,7 @@
                                 <option value="">Lütfen seçiniz</option>
 
                                 @foreach ($genel_program as $item)
-                                    
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
 
                             </select>
@@ -155,9 +143,7 @@
                                 <option value="">Lütfen seçiniz</option>
 
                                 @foreach ($egitim_programi as $item)
-                                    
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
 
                             </select>
@@ -168,9 +154,7 @@
                                 <option value="">Lütfen seçiniz</option>
 
                                 @foreach ($akademik_program as $item)
-                                    
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
 
                             </select>
@@ -181,9 +165,7 @@
                                 <option value="">Lütfen seçiniz</option>
 
                                 @foreach ($dil_sinavi as $item)
-                                    
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
 
                             </select>
@@ -192,9 +174,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="">PROSEDÜR</label>
-                            <input type="text" class="form-control" placeholder="Prosedür..." name="prosedur" id="">
+                            <input type="text" class="form-control" placeholder="Prosedür..." name="prosedur"
+                                id="">
                         </div>
-                    </div><br><br><hr>
+                    </div><br><br>
+                    <hr>
 
                     <h5>GÜVENLİK</h5><br>
                     <div class="row">
@@ -218,47 +202,7 @@
     </div>
 @endsection
 @section('script')
-    <script>
-        function test2() {
-            var il_id = $('#uni_il_id').val()
-            $("#uni_id").removeAttr('disabled');
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'GET',
-                url: '{{ route('uni.getir') }}',
-                data: 'id=' + il_id,
-                success: function(data) {
-                    $("#uni_id").html("");
-                    for (i = 0; i < data.length; i++) {
-                        var opt = "<option value='" + data[i].uni_id + "' >" + data[i].uni_name + "</option>";
-                        $("#uni_id").append(opt);
-                    }
-                }
-            });
-        }
-
-        function test3() {
-            var uni_id = $('#uni_id').val()
-            $("#fakulte_id").removeAttr('disabled');
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'GET',
-                url: '{{ route('fakulte.getir') }}',
-                data: 'id=' + uni_id,
-                success: function(data) {
-                    $("#fakulte_id").html("");
-                    for (i = 0; i < data.length; i++) {
-                        var opt = "<option value='" + data[i].fakulte_id + "' >" + data[i].fakulte_ad + "</option>";
-                        $("#fakulte_id").append(opt);
-                    }
-                }
-            });
-        }
-    </script>
+   
     <!-- JAVASCRIPT -->
     <script src="{{ URL::asset('/assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('/assets/libs/bootstrap/bootstrap.min.js') }}"></script>

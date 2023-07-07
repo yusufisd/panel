@@ -14,12 +14,8 @@
             <div class="card-body">
                 <form action="<?php echo e(route('danisman.basvurulcak.update')); ?>" method="POST">
                     <?php echo csrf_field(); ?>
-                    <?php
-                    $id = request()->id;
-                    ?>
                     <?php $__currentLoopData = $kisi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ki): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <input type="hidden" value="<?php echo e($ki->id); ?>" name="id" id="">
-                        <input type="hidden" value="<?php echo e($id); ?>" name="ogrenci_id" id="">
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="">ÜLKE</label>

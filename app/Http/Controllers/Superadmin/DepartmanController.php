@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Superadmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CountriesList;
+use App\Models\Danisman;
 use App\Models\Departman;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -30,6 +31,12 @@ class DepartmanController extends Controller
     {
         $ulkeler = CountriesList::orderBy('id','asc')->get();
         return view('superadmin.pages.departman.add',compact('ulkeler'));
+    }
+
+    public function detail($id){
+        $data = Departman::find($id);
+        $danismanlar = Danisman::where('department_id',$id)->get();
+        return view('superadmin.pages.departman.detail',compact('data','danismanlar'));
     }
 
     /**
@@ -75,7 +82,8 @@ class DepartmanController extends Controller
     public function edit($id)
     {
         $data = Departman::find($id);
-        return view('superadmin.pages.departman.edit',compact('data'));
+        $ulkeler = CountriesList::orderBy('country_name','asc')->get();
+        return view('superadmin.pages.departman.edit',compact('data','ulkeler'));
     }
 
     /**

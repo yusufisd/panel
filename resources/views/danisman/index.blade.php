@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="text-muted mb-3 lh-1 d-block text-truncate">ÖĞRENCİLER</span>
+                            <span class="text-muted mb-3 lh-1 d-block text-truncate">ÖĞRENCİLERİM</span>
                             <hr>
                             <h3 style="text-align: center" class="mb-3">
                                 <span class="counter-value" data-target="{{ ogrenciCount() }}">0</span>
@@ -231,10 +231,12 @@
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">ÖĞRENCİ LİSTESİ</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">ÖĞRENCİLERİM</h4>
                     <div class="flex-shrink-0">
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            <a href="{{route('danisman.ogrenci.list')}}">
+                                <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
+                            </a>
                         </div>
                     </div>
                 </div><!-- end card header -->

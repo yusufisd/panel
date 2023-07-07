@@ -10,9 +10,8 @@
                 <li class="menu-title" data-key="t-menu">PANEL</li>
 
                 <li>
-                    <a href="index">
+                    <a href="<?php echo e(route('index')); ?>">
                         <i data-feather="home"></i>
-                        <span class="badge rounded-pill bg-soft-success text-success float-end">9+</span>
                         <span data-key="t-dashboard">ANASAYFA</span>
                     </a>
                 </li>
@@ -110,10 +109,8 @@
                         <span data-key="t-components">ÖĞRENCİ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ui-alerts" key="t-alerts">BORÇ EKLE</a></li>
-                        <li><a href="ui-buttons" key="t-buttons">BORÇ LİSTESİ</a></li>
-                        <li><a href="ui-tahs" key="t-buttons">TAHSİLAT</a></li>
-                        <li><a href="ui-tahsi" key="t-buttons">TAHSİLAT LİSTESİ</a></li>
+                        <li><a href="<?php echo e(route('.borc.list')); ?>" key="t-buttons">BORÇ LİSTESİ</a></li>
+                        <li><a href="<?php echo e(route('.tahsilat.list')); ?>" key="t-buttons">TAHSİLAT LİSTESİ</a></li>
                     </ul>
                 </li>
 
@@ -123,8 +120,8 @@
                         <span data-key="t-ui-elements">DANIŞMAN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="extended-lightbox" data-key="t-lightbox">ÖDEME YAP</a></li>
-                        <li><a href="extended-rangeslider" data-key="t-range-slider">TÜM ÖDEMELER</a></li>
+                        <li><a href="<?php echo e(route('danisman_muhasebe.odeme_yap')); ?>" data-key="t-lightbox">ÖDEME YAP</a></li>
+                        <li><a href="<?php echo e(route('danisman_muhasebe.odeme_list')); ?>" data-key="t-range-slider">TÜM ÖDEMELER</a></li>
                     </ul>
                 </li>
 
@@ -134,7 +131,7 @@
                         <span data-key="t-forms">CARİ EKSTRE</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="form-elements" data-key="t-form-elements">EKSTRE</a></li>
+                        <li><a href="<?php echo e(route('ekstre.add')); ?>" data-key="t-form-elements">EKSTRE</a></li>
                     </ul>
                 </li>
 
