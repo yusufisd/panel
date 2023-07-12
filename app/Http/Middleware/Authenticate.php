@@ -20,13 +20,13 @@ class Authenticate extends Middleware
             $data2 = explode('/', $data);
             if (isset($data2[3]) && $data2[3] == "superadmin") {
                 return route('superadmin.login');
+
             } elseif(isset($data2[3]) && $data2[3] == "danisman"){
                 return route('danisman.login');
 
             }
              else {
-
-                return route('login');
+                return route('ogrenci.login');
             }
         }
     }

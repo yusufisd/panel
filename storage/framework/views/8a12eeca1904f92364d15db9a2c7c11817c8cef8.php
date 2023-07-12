@@ -10,7 +10,7 @@
                 <li class="menu-title" data-key="t-menu">PANEL</li>
 
                 <li>
-                    <a href="<?php echo e(route('superadmin.index')); ?>">
+                    <a href="<?php echo e(route('index')); ?>">
                         <i data-feather="home"></i>
                         <span data-key="t-dashboard">ANASAYFA</span>
                     </a>
@@ -147,4 +147,4 @@
     </div>
 </div>
 <!-- Left Sidebar End -->
-<?php /**PATH C:\xampp\htdocs\panel\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\panel\resources\views/ogrenci/layouts/sidebar.blade.php ENDPATH**/ ?>

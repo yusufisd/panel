@@ -94,38 +94,22 @@
 
                         <div class="okul" id="okul" style="display: none">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <label for="">OKUDUĞU ŞEHİR</label>
-                                    <select onchange="test2()" name="uni_il_id" class="form-control" id="uni_il_id">
+                                    <select  name="okul_il" class="form-control" id="okul_il">
                                         <option value="">Lütfen şehir seçin</option>
 
                                         <?php $__currentLoopData = $iller; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $il): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option <?php echo e($item->uni_il_id == $il->id ? 'selected' : ''); ?> value="<?php echo e($il->id); ?>"><?php echo e(strtoupper($il->il_name)); ?></option>
+                                            <option <?php echo e($item->okul_il == $il->id ? 'selected' : ''); ?> value="<?php echo e($il->id); ?>"><?php echo e(strtoupper($il->il_name)); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="">ÜNİVERSİTE</label>
-                                    <select onchange="test3()" disabled name="uni_id" class="form-control" id="uni_id">
-                                        <option value=""><?php echo e($item->Universite->uni_name); ?></option>
-                                    </select>
-                                </div>
-                                <div class="col-md-5">
-                                    <label for="">FAKÜLTE</label>
-                                    <select disabled name="fakulte_id" class="form-control" id="fakulte_id">
-
-                                        <option value=""><?php echo e($item->Fakulte->fakulte_ad); ?></option>
-
-                                    </select>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="">BÖLÜM</label>
-                                    <input type="text" name="bolum" value="<?php echo e($item->bolum); ?>" class="form-control"
+                                    <label for="">OKUL</label>
+                                    <input type="text" name="okul" value="<?php echo e($item->okul); ?>" class="form-control"
                                         id="">
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <label for="">SINIF</label>
                                     <input type="number" class="form-control" name="sinif" value="<?php echo e($item->sinif); ?>"
                                         id="">

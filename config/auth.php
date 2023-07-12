@@ -49,6 +49,10 @@ return [
             'driver' => 'session',
             'provider' => 'danisman',
         ],
+        'ogrenci' => [
+            'driver' => 'session',
+            'provider' => 'ogrenci',
+        ],
         
     ],
 
@@ -83,6 +87,11 @@ return [
         'danisman' => [
             'driver' => 'eloquent',
             'model' => App\Models\Danisman::class,
+        ],
+
+        'ogrenci' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
         ],
 
         // 'users' => [

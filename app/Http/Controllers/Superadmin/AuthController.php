@@ -27,7 +27,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password,])) {
-            return redirect()->route('index');
+            return redirect()->route('superadmin.index');
         } else {
             return back()->withErrors("Böyle bir kullanıcı yok!");
         }

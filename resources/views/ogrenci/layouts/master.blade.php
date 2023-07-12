@@ -14,16 +14,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-    @include('layouts.head-css')
+    @include('ogrenci.layouts.head-css')
 </head>
 
 @section('body')
-    @include('layouts.body')
+    @include('ogrenci.layouts.body')
 @show
 <!-- Begin page -->
 <div id="layout-wrapper">
-    @include('layouts.topbar')
-    @include('layouts.sidebar')
+    @include('ogrenci.layouts.topbar')
+    @include('ogrenci.layouts.sidebar')
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    @if (!Route::is('index'))
+                    @if (!Route::is('ogrenci.index'))
                         <div class="col-md-8">
                             @yield('content')
                         </div>
@@ -167,7 +167,7 @@
 
                         </div>
                     @endif
-                    @if (Route::is('index'))
+                    @if (Route::is('ogrenci.index'))
                         <div class="col-md-12">
                             @yield('content')
                         </div>
@@ -179,14 +179,14 @@
             <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
-        @include('layouts.footer')
+        @include('ogrenci.layouts.footer')
     </div>
     <!-- end main content-->
 </div>
 <!-- END layout-wrapper -->
 
 <!-- JAVASCRIPT -->
-@include('layouts.vendor-scripts')
+@include('ogrenci.layouts.vendor-scripts')
 @include('sweetalert::alert')
 
 </body>

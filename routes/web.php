@@ -9,6 +9,8 @@ use App\Http\Controllers\Danisman\GenelProgramController as DanismanGenelProgram
 use App\Http\Controllers\Danisman\HomeController as DanismanHomeController;
 use App\Http\Controllers\Danisman\OgrMuhasebeController;
 use App\Http\Controllers\Danisman\StudentController as DanismanStudentController;
+use App\Http\Controllers\Ogrenci\AuthController as OgrenciAuthController;
+use App\Http\Controllers\Ogrenci\HomeController as OgrenciHomeController;
 use App\Http\Controllers\Superadmin\HomeController;
 use App\Http\Controllers\Superadmin\AkademikProgramController;
 use App\Http\Controllers\Superadmin\DepartmanController;
@@ -35,16 +37,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
-//Language Translation
-Route::get('index/{locale}', [HomeController::class, 'lang']);
 
-Route::get('/', [HomeController::class, 'root'])->name('root');
-
-//Update User Details
 Route::post('/update-profile/{id}', [HomeController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [HomeController::class, 'updatePassword'])->name('updatePassword');
-
-
 
 
 // SÜPERADMİN CONTROLLER
@@ -53,7 +48,7 @@ Route::post('superadmin/giris-yap', [AuthController::class, 'login_post'])->name
 
 Route::prefix('superadmin')->middleware('auth:admin')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('superadmin.logout');
-    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/', [HomeController::class, 'index'])->name('superadmin.index');
 
     Route::get('/ayarlar',[AuthController::class,'setting'])->name('settings');
     Route::post('/ayarlar',[AuthController::class,'setting_post'])->name('settings.post');
@@ -174,7 +169,7 @@ Route::post('danisman/login', [DanismanAuthController::class, 'login_post'])->na
 Route::prefix('danisman')->name('danisman')->middleware('auth:danisman')->group(function () {
     Route::get('/logout', [DanismanAuthController::class, 'logout'])->name('.logout');
 
-    Route::get('', [DanismanHomeController::class, 'index'])->name('.index');
+    Route::get('/', [DanismanHomeController::class, 'index'])->name('.index');
 
     // AKADEMİK PROGRAM CONTROLLER
     Route::controller(DanismanAkademikProgramController::class)->name('.akademik_program')->prefix('akademik-program')->group(function () {
@@ -259,3 +254,11 @@ Route::prefix('danisman')->name('danisman')->middleware('auth:danisman')->group(
         Route::get('/sil/{id?}','tahsilat_sil')->name('.sil');
     });
 });
+
+
+
+
+// ÖĞRENCİ İŞLEMLERİ
+Route::get('/ogrenci',[OgrenciAuthController::class,'login'])->name('ogrenci.login');
+Route::post('/ogrenci',[OgrenciAuthController::class,'loginPost'])->name('ogrenci.login.post');
+Route::get('/',[OgrenciHomeController::class,'index'])->middleware('auth:ogrenci')->name('ogrenci.index');

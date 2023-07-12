@@ -10,7 +10,7 @@
                 <li class="menu-title" data-key="t-menu">PANEL</li>
 
                 <li>
-                    <a href="{{route('index')}}">
+                    <a href="{{route('superadmin.index')}}">
                         <i data-feather="home"></i>
                         <span data-key="t-dashboard">ANASAYFA</span>
                     </a>

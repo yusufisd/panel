@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <?php if(!Route::is('index')): ?>
+                    <?php if(!Route::is('superadmin.index')): ?>
                         <div class="col-md-8">
                             <?php echo $__env->yieldContent('content'); ?>
                         </div>
@@ -167,7 +167,7 @@
 
                         </div>
                     <?php endif; ?>
-                    <?php if(Route::is('index')): ?>
+                    <?php if(Route::is('superadmin.index')): ?>
                         <div class="col-md-12">
                             <?php echo $__env->yieldContent('content'); ?>
                         </div>
