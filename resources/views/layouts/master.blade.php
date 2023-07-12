@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <title> @yield('title') | Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <meta content="Plus Education Portal Süper Admin " name="description" />
+	<meta content="Plus Education Portal " name="name" />
+    <meta content="Plus Education Portal" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
