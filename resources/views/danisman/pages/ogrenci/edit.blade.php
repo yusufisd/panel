@@ -29,10 +29,12 @@
                         @csrf
 
                         @if ($errors->any())
-                            @foreach ($errors->all() as $item)
-                                <div class="alert alert-danger">{{ $item }}</div>
+                            @foreach ($errors->all() as $as)
+                                <div class="alert alert-danger">{{ $as }}</div>
                             @endforeach
                         @endif
+
+                        <input type="hidden" name="student_id" value="{{$item->id}}" id="">
 
                         <div class="row">
                             <div onclick="deneme4()" class="eve" id="eve_genel_bilgiler"

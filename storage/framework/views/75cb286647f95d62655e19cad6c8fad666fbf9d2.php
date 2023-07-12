@@ -49,7 +49,7 @@
                     </div>
                     <br><br>
                     <div>
-                        <input type="submit" value="EKLE" class="btn btn-primary" name="" id="">
+                        <input type="submit" value="KAYDET" class="btn btn-primary" name="" id="">
                     </div>
                 </form>
             </div>

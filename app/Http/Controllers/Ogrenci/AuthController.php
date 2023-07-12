@@ -27,4 +27,9 @@ class AuthController extends Controller
             return back()->withErrors("Böyle bir kullanıcı yok!");
         }
     }
+
+    public function logout(){
+        Auth::guard('ogrenci')->logout();
+        return redirect()->route('ogrenci.login');
+    }
 }

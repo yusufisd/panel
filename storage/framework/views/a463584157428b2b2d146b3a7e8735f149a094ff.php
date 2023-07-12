@@ -29,10 +29,12 @@
                         <?php echo csrf_field(); ?>
 
                         <?php if($errors->any()): ?>
-                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="alert alert-danger"><?php echo e($item); ?></div>
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $as): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="alert alert-danger"><?php echo e($as); ?></div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
+
+                        <input type="hidden" name="student_id" value="<?php echo e($item->id); ?>" id="">
 
                         <div class="row">
                             <div onclick="deneme4()" class="eve" id="eve_genel_bilgiler"

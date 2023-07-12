@@ -51,14 +51,14 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item bg-soft-light border-start border-end" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium">username</span>
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium"><?php echo e(Auth::guard('ogrenci')->user()->name); ?> <?php echo e(Auth::guard('ogrenci')->user()->surname); ?></span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
                     <a class="dropdown-item" href="<?php echo e(route('settings')); ?>"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Şifreyi Değiştir</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item " href="<?php echo e(route('superadmin.logout')); ?>"><i class="bx bx-power-off font-size-16 align-middle me-1"></i> <span key="t-logout">Çıkış Yap</span></a>
+                    <a class="dropdown-item " href="<?php echo e(route('ogrenci.logout')); ?>"><i class="bx bx-power-off font-size-16 align-middle me-1"></i> <span key="t-logout">Çıkış Yap</span></a>
                     
                 </div>
             </div>

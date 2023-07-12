@@ -149,9 +149,48 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            "name" => "required",
+            "surname" => "required",
+            "phone" => "required",
+            "okul_il" => "required",
+            "okul" => "required",
+            "sinif" => "required",
+            "email" => "required",
+        ],[
+            "name.required" => "İsim boş bırakılamaz!",
+            "surname.required" => "Soy isim boş bırakılamaz!",
+            "phone.required" => "Telefon numarası boş bırakılamaz!",
+            "okul_il.required" => "Okuduğu şehir boş bırakılamaz",
+            "okul.required" => "Okul boş bırakılamaz",
+            "sinif.required" => "Sınıf boş bırakılamaz",
+            "email.required" => "Email boş bırakılamaz",
+        ]);
+        $id = $request->student_id;
+        $new = Student::find($id);
+
+        $new->name = $request->name;
+        $new->surname = $request->surname;
+        $new->phone = $request->phone;
+        $new->okul_il = $request->okul_il;
+        $new->okul = $request->okul;
+        $new->sinif = $request->sinif;
+        $new->genel_program = $request->genel_program;
+        $new->akademik_prgram_id = $request->akademik_program;
+        $new->egitim_program_id = $request->egitim_programi;
+        $new->dil_sinavi_id = $request->dil_sinavi;
+        $new->email = $request->email;
+
+        if($request->password != null){
+            $new->password = Hash::make($request->password);
+        }
+
+        $new->update();
+        Alert::success('Başarılı','Öğrenci düzenleme işlemi başarılı.');
+        return redirect()->route('danisman.ogrenci.list');
+
     }
 
     /**

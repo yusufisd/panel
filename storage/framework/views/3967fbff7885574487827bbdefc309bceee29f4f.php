@@ -82,7 +82,18 @@
                             <input placeholder="Referans..." type="text" class="form-control" name="referance"
                                 id="">
                         </div>
-                    </div><br><br><hr>
+                    </div><br>
+                    
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="">NOT</label>
+                            <input type="text" class="form-control" name="description" id="">
+                        </div>
+                    </div>
+
+                    
+                    <br><hr>
 
                     <h5>OKUL BİLGİLERİ</h5><br>
 
