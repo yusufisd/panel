@@ -56,7 +56,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="<?php echo e(route('settings')); ?>"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Şifreyi Değiştir</a>
+                    <a class="dropdown-item" href="#"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Şifreyi Değiştir</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item " href="<?php echo e(route('ogrenci.logout')); ?>"><i class="bx bx-power-off font-size-16 align-middle me-1"></i> <span key="t-logout">Çıkış Yap</span></a>
                     
