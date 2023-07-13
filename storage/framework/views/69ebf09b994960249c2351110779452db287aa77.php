@@ -151,4 +151,4 @@ unset($__errorArgs, $__bag); ?>
     <script src="<?php echo e(URL::asset('assets/js/pages/feather-icon.init.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('ogrenci.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\panel\resources\views/ogrenci/pages/auth/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\panel\resources\views/ogrenci/pages/auth/login.blade.php ENDPATH**/ ?>

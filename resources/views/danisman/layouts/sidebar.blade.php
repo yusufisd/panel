@@ -20,7 +20,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="mail"></i>
+                        <i data-feather="database"></i>
                         <span data-key="t-email">GENEL PROGRAM</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -33,7 +33,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="users"></i>
+                        <i data-feather="book-open"></i>
                         <span data-key="t-contacts">EĞİTİM PROGRAMI</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -56,7 +56,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="trello"></i>
+                        <i data-feather="cast"></i>
                         <span data-key="t-tasks">DİL SINAVI</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -68,7 +68,7 @@
 
                 <li>
                     <a href="{{route('danisman.ogrenci.add')}}" >
-                        <i data-feather="file-text"></i>
+                        <i data-feather="user-plus"></i>
                         <span data-key="t-pages">ÖĞRENCİ EKLE</span>
                     </a>
                 </li>

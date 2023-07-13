@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title> <?php echo $__env->yieldContent('title'); ?> | Dason - Admin & Dashboard Template</title>
+    <title> <?php echo $__env->yieldContent('title'); ?> | Plus Education Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <meta content="Plus Education Portal Süper Admin Girişi" name="description" />
+    <meta content="Plus Education Portal" name="author" />
+    <meta content="Plus Education Portal" name="name" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="<?php echo e(URL::asset('assets/images/favicon.ico')); ?>">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"

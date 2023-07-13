@@ -20,7 +20,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="mail"></i>
+                        <i data-feather="database"></i>
                         <span data-key="t-email">GENEL PROGRAM</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -33,7 +33,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="users"></i>
+                        <i data-feather="book-open"></i>
                         <span data-key="t-contacts">EĞİTİM PROGRAMI</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -56,7 +56,8 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="trello"></i>
+                        <i data-feather="cast"></i>
+
                         <span data-key="t-tasks">DİL SINAVI</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -79,7 +80,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="file-text"></i>
+                        <i data-feather="user"></i>
                         <span data-key="t-pages">DANIŞMAN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -90,7 +91,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="file-text"></i>
+                        <i data-feather="users"></i>
                         <span data-key="t-pages">ÖĞRENCİ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -105,7 +106,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="briefcase"></i>
+                        <i data-feather="align-justify"></i>
                         <span data-key="t-components">ÖĞRENCİ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -116,7 +117,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="gift"></i>
+                        <i data-feather="align-justify"></i>
                         <span data-key="t-ui-elements">DANIŞMAN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -127,7 +128,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="box"></i>
+                        <i data-feather="archive"></i>
                         <span data-key="t-forms">CARİ EKSTRE</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">

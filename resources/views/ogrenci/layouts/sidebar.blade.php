@@ -20,7 +20,7 @@
 
                 <li>
                     <a href="{{route('ogrenci.programlar')}}">
-                        <i data-feather="mail"></i>
+                        <i data-feather="database"></i>
                         <span data-key="t-email">PROGRAMLAR</span>
                     </a>
                 </li>
@@ -29,7 +29,7 @@
 
                 <li>
                     <a href="{{route('ogrenci.danismanim')}}">
-                        <i data-feather="users"></i>
+                        <i data-feather="user"></i>
                         <span data-key="t-contacts">DANIŞMANIM</span>
                     </a>
                 </li>
@@ -39,28 +39,28 @@
 
                 <li>
                     <a href="{{route('ogrenci.basvurulacak')}}">
-                        <i data-feather="briefcase"></i>
+                        <i data-feather="align-justify"></i>
                         <span data-key="t-components">BAŞVURULACAK</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('ogrenci.basvurulan')}}">
-                        <i data-feather="briefcase"></i>
+                        <i data-feather="list"></i>
                         <span data-key="t-components">BAŞVURULAN</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('ogrenci.onaylanan')}}">
-                        <i data-feather="briefcase"></i>
+                        <i data-feather="check-square"></i>
                         <span data-key="t-components">ONAYLANAN</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('ogrenci.reddedilen')}}">
-                        <i data-feather="briefcase"></i>
+                        <i data-feather="x-square"></i>
                         <span data-key="t-components">REDDEDİLEN</span>
                     </a>
                 </li>
@@ -71,7 +71,7 @@
 
                 <li>
                     <a href="{{route('ogrenci.profil')}}">
-                        <i data-feather="briefcase"></i>
+                        <i data-feather="user"></i>
                         <span data-key="t-components">PROFİLİM</span>
                     </a>
                 </li>
