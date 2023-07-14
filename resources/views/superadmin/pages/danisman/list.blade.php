@@ -41,9 +41,11 @@
                                 <tr>
                                     <td>{{ strtoupper($item->name) }} {{ strtoupper($item->surname) }}</td>
                                     <td>
+                                        @if(isset($item->Departman))
                                         <a href="{{ route('departman.detail', $item->id) }}">
                                             {{ strtoupper($item->Departman->name) ?? '' }}
                                         </a>
+                                        @endif
                                     </td>
                                     <td>{{ strtoupper($item->Ulke()) ?? '' }}</td>
                                     <td>{{ $item->email }}</td>
