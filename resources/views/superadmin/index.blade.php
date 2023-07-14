@@ -200,7 +200,7 @@
 
                                         <td>
                                             <p class="mb-1"><a href=""
-                                                    class="text-dark">{{ $item->Departman->name }}</a></p>
+                                                    class="text-dark">{{ $item->Departman->name ?? ''}}</a></p>
                                             <span class="text-muted mt-1"> {{ $item->phone }}</span>
                                         </td>
 

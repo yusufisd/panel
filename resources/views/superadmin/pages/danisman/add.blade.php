@@ -40,7 +40,7 @@
                         <div class="col-md-6">
                             <label for="">DEPARTMAN</label>
                             <select name="departman_id" class="form-control" id="">
-                                <option value="1">Lütfen ülke seçin</option>
+                                <option value="1">Lütfen departman seçin</option>
 
                                 @foreach ($departman as $item)
                                     <option value="{{ $item->id }}">{{ strtoupper($item->name) }}</option>

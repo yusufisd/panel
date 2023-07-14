@@ -40,7 +40,7 @@
                         <div class="col-md-6">
                             <label for="">DEPARTMAN</label>
                             <select name="departman_id" class="form-control" id="">
-                                <option value="1">Lütfen ülke seçin</option>
+                                <option value="1">Lütfen departman seçin</option>
 
                                 <?php $__currentLoopData = $departman; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($item->id); ?>"><?php echo e(strtoupper($item->name)); ?></option>
