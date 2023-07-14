@@ -47,7 +47,11 @@
                                         </a>
                                         @endif
                                     </td>
-                                    <td>{{ strtoupper($item->Ulke()) ?? '' }}</td>
+                                    <td>
+                                        @if(isset($item->Departman))
+                                            {{ strtoupper($item->Ulke()) ?? '' }}
+                                        @endif
+                                    </td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ strtoupper($item->phone) }}</td>
                                     <td style="width:100px">
