@@ -47,7 +47,7 @@
                                             {{ strtoupper($item->name) }}
                                         </a>
                                     </td>
-                                    <td>{{ strtoupper($item->Ulke->country_name) }}</td>
+                                    <td>{{ strtoupper($item->Ulke->country_name) ?? ''}}</td>
                                     <td style="width:150px">
                                         <a href="{{ route('departman.edit', $item->id) }}">
                                             <button type="button" class="btn btn-primary">Düzenle</button>

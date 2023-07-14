@@ -42,10 +42,10 @@
                                     <td>{{ strtoupper($item->name) }} {{ strtoupper($item->surname) }}</td>
                                     <td>
                                         <a href="{{ route('departman.detail', $item->id) }}">
-                                            {{ strtoupper($item->Departman->name) }}
+                                            {{ strtoupper($item->Departman->name) ?? '' }}
                                         </a>
                                     </td>
-                                    <td>{{ strtoupper($item->Ulke()) }}</td>
+                                    <td>{{ strtoupper($item->Ulke()) ?? '' }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ strtoupper($item->phone) }}</td>
                                     <td style="width:100px">
