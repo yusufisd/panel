@@ -41,12 +41,19 @@
                                 <tr>
                                     <td><?php echo e(strtoupper($item->name)); ?> <?php echo e(strtoupper($item->surname)); ?></td>
                                     <td>
+                                        <?php if(isset($item->Departman)): ?>
                                         <a href="<?php echo e(route('departman.detail', $item->id)); ?>">
-                                            <?php echo e(strtoupper($item->Departman->name)); ?>
+                                            <?php echo e(strtoupper($item->Departman->name) ?? ''); ?>
 
                                         </a>
+                                        <?php endif; ?>
                                     </td>
-                                    <td><?php echo e(strtoupper($item->Ulke())); ?></td>
+                                    <td>
+                                        <?php if(isset($item->Departman)): ?>
+                                            <?php echo e(strtoupper($item->Ulke()) ?? ''); ?>
+
+                                        <?php endif; ?>
+                                    </td>
                                     <td><?php echo e($item->email); ?></td>
                                     <td><?php echo e(strtoupper($item->phone)); ?></td>
                                     <td style="width:100px">
@@ -88,7 +95,7 @@
     <!-- JAVASCRIPT -->
     <script src="<?php echo e(asset('assets/libs/jquery/jquery.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu2.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/simplebar/simplebar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/node-waves/waves.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/feather-icons/feather.min.js')); ?>"></script>

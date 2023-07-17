@@ -137,8 +137,15 @@
                 </li>
 
                 
+                <li class="menu-title mt-2" data-key="t-components">MAİL</li>
                 
-                
+                <li>
+                    <a href="{{route('mail.gonder')}}">
+                        <i data-feather="align-justify"></i>
+                        <span data-key="t-ui-elements">MAİL GÖNDER</span>
+                    </a>
+                    
+                </li>
 
             </ul>
 

@@ -47,13 +47,22 @@
                                         </a>
                                     </td>
                                     <td>
+                                        @if(isset($item->Danisman) && isset($item->Danisman->Departman))
                                         <a href="{{ route('departman.detail', $item->id) }}">
                                             {{ strtoupper($item->Danisman->Departman->name) }}
                                         </a>
+                                        @endif
                                     </td>
-                                    <td>{{ strtoupper($item->Danisman->name) }} {{ strtoupper($item->Danisman->surname) }}
+                                    <td>
+                                        @if(isset($item->Danisman))
+                                        {{ strtoupper($item->Danisman->name) }} {{ strtoupper($item->Danisman->surname) }}                                            
+                                        @endif
                                     </td>
-                                    <td>{{ strtoupper($item->Danisman->Departman->Ulke->country_name) }}</td>
+                                    <td>
+                                        @if(isset($item->Danisman->Departman) && isset($item->Danisman))
+                                        {{ strtoupper($item->Danisman->Departman->Ulke->country_name) }}    
+                                        @endif
+                                        </td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ strtoupper($item->phone) }}</td>
                                     <td>{{ strtoupper($item->bakiye) }} TL</td>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Danisman\GenelProgramController as DanismanGenelProgram
 use App\Http\Controllers\Danisman\HomeController as DanismanHomeController;
 use App\Http\Controllers\Danisman\OgrMuhasebeController;
 use App\Http\Controllers\Danisman\StudentController as DanismanStudentController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\Ogrenci\AuthController as OgrenciAuthController;
 use App\Http\Controllers\Ogrenci\GenelController;
 use App\Http\Controllers\Ogrenci\HomeController as OgrenciHomeController;
@@ -53,6 +54,10 @@ Route::prefix('superadmin')->middleware('auth:admin')->group(function () {
 
     Route::get('/ayarlar', [AuthController::class, 'setting'])->name('settings');
     Route::post('/ayarlar', [AuthController::class, 'setting_post'])->name('settings.post');
+
+    // MAİL İŞLEMLERİ
+    Route::get('/mail-gonder',[MailController::class,'add'])->name('mail.gonder');
+    Route::post('/mail-gonder',[MailController::class,'post'])->name('mail.gonder.post');
 
     // AKADEMİK PROGRAM CONTROLLER
     Route::controller(AkademikProgramController::class)->name('akademik_program')->prefix('akademik-program')->group(function () {

@@ -48,15 +48,23 @@
                                         </a>
                                     </td>
                                     <td>
+                                        <?php if(isset($item->Danisman) && isset($item->Danisman->Departman)): ?>
                                         <a href="<?php echo e(route('departman.detail', $item->id)); ?>">
                                             <?php echo e(strtoupper($item->Danisman->Departman->name)); ?>
 
                                         </a>
+                                        <?php endif; ?>
                                     </td>
-                                    <td><?php echo e(strtoupper($item->Danisman->name)); ?> <?php echo e(strtoupper($item->Danisman->surname)); ?>
-
+                                    <td>
+                                        <?php if(isset($item->Danisman)): ?>
+                                        <?php echo e(strtoupper($item->Danisman->name)); ?> <?php echo e(strtoupper($item->Danisman->surname)); ?>                                            
+                                        <?php endif; ?>
                                     </td>
-                                    <td><?php echo e(strtoupper($item->Danisman->Departman->Ulke->country_name)); ?></td>
+                                    <td>
+                                        <?php if(isset($item->Danisman->Departman) && isset($item->Danisman)): ?>
+                                        <?php echo e(strtoupper($item->Danisman->Departman->Ulke->country_name)); ?>    
+                                        <?php endif; ?>
+                                        </td>
                                     <td><?php echo e($item->email); ?></td>
                                     <td><?php echo e(strtoupper($item->phone)); ?></td>
                                     <td><?php echo e(strtoupper($item->bakiye)); ?> TL</td>
@@ -99,7 +107,7 @@
     <!-- JAVASCRIPT -->
     <script src="<?php echo e(asset('assets/libs/jquery/jquery.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu2.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/simplebar/simplebar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/node-waves/waves.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/feather-icons/feather.min.js')); ?>"></script>

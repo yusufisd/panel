@@ -1,0 +1,2 @@
+Merhaba {{ $name }}, <br>
+ {{ $content }}

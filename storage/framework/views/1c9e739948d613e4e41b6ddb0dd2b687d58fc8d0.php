@@ -33,24 +33,26 @@
                         <?php endif; ?>
 
                         <div class="row">
-                            <div onclick="deneme4()" class="eve" id="eve_genel_bilgiler"
+                            <div onclick="deneme4()" class="eve col-md-2" id="eve_genel_bilgiler"
                                 style="background-color: brown;border-color:brown!important;border:solid;border-radius:10px; height:50px;width:200px; margin:2%;border-width:thin">
                                 <h6 style="color:white;padding:5%">GENEL AYARLAR</h6>
                             </div>
-                            <div onclick="deneme()" class="eve" id="eve_okul_bilgileri"
+                            <div onclick="deneme()" class="eve col-md-2" id="eve_okul_bilgileri"
                                 style="background-color: gray;border-color:brown!important;border:solid;border-radius:10px; height:50px;width:200px; margin:2%;border-width:thin">
                                 <h6 style="color:white;padding:5%">OKUL AYARLARI</h6>
                             </div>
-                            <div onclick="deneme2()" class="eve" id="eve_basvurulacak"
+                            <div onclick="deneme2()" class="eve col-md-2" id="eve_basvurulacak"
                                 style="background-color: gray;border-color:brown!important;border:solid;border-radius:10px; height:50px;width:200px; margin:2%;border-width:thin">
                                 <h6 style="color:white;padding:5%">PROGRAM AYARLARI</h6>
                             </div>
-                            <a href="<?php echo e(route('ogrenci.guvenlik',$item->id)); ?>">
-                                <div class="eve" id="eve_basvurulan"
+                                <div class="eve col-md-2" id="eve_basvurulan"
                                     style="background-color: gray;border-color:brown!important;border:solid;border-radius:10px; height:50px;width:200px; margin:2%;border-width:thin">
+                                    <a href="<?php echo e(route('ogrenci.guvenlik',$item->id)); ?>">
+                                    
                                     <h6 style="color:white;padding:5%">GÜVENLİK AYARLARI</h6>
-                                </div>
                             </a>
+
+                                </div>
                         </div><br>
 
                         <div class="genel" id="genel">
@@ -72,10 +74,10 @@
                                 <div class="col-md-6">
                                     <label for="">DEPARTMAN</label>
                                     <select name="departman_id" class="form-control" id="">
-                                        <option value="1">Lütfen ülke seçin</option>
+                                        <option value="1">Lütfen departman seçin</option>
 
                                         <?php $__currentLoopData = $departman; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dep): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option <?php echo e($item->Danisman->department_id == $dep->id ? 'selected' : ''); ?>
+                                            <option <?php echo e($item->Danisman->department_id ?? '-1' == $dep->id ? 'selected' : ''); ?>
 
                                                 value="<?php echo e($dep->id); ?>"><?php echo e(strtoupper($dep->name)); ?></option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

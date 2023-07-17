@@ -199,7 +199,7 @@
 
                                         <td>
                                             <p class="mb-1"><a href=""
-                                                    class="text-dark"><?php echo e($item->Departman->name); ?></a></p>
+                                                    class="text-dark"><?php echo e($item->Departman->name ?? ''); ?></a></p>
                                             <span class="text-muted mt-1"> <?php echo e($item->phone); ?></span>
                                         </td>
 
