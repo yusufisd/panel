@@ -177,6 +177,9 @@ Route::prefix('danisman')->name('danisman')->middleware('auth:danisman')->group(
 
     Route::get('/', [DanismanHomeController::class, 'index'])->name('.index');
 
+    Route::get('/sifre-degis',[DanismanAuthController::class,'sifre_degis'])->name('.sifre.degistir');
+    Route::post('/sifre-degis',[DanismanAuthController::class,'sifre_degis_post'])->name('.sifre.degistir.post');
+
     // AKADEMİK PROGRAM CONTROLLER
     Route::controller(DanismanAkademikProgramController::class)->name('.akademik_program')->prefix('akademik-program')->group(function () {
         Route::get('/ekle', 'create')->name('.add');

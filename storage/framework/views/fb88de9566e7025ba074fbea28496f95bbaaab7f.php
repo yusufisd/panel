@@ -88,9 +88,9 @@
                                     <?php if(!isset($item->status)): ?>
                                         <td><span style='color:lightgreen'>GELİR</span></td>
                                     <?php endif; ?>
-                                    <td><?php echo e($item->tutar); ?></td>
+                                    <td><?php echo e($item->tutar ?? 0); ?></td>
                                     <td><?php echo e($item->description ?? '-'); ?></td>
-                                    <td><?php echo e(substr($item->created_at, 0, 10)); ?></td>
+                                    <td><?php echo e(substr($item->created_at ?? '00', 0, 10)); ?></td>
                                 </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
@@ -108,7 +108,7 @@
     <!-- JAVASCRIPT -->
     <script src="<?php echo e(asset('assets/libs/jquery/jquery.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu2.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/simplebar/simplebar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/node-waves/waves.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/feather-icons/feather.min.js')); ?>"></script>

@@ -48,7 +48,7 @@
 
                                         </a>
                                     </td>
-                                    <td><?php echo e(strtoupper($item->Ulke->country_name)); ?></td>
+                                    <td><?php echo e(strtoupper($item->Ulke->country_name) ?? ''); ?></td>
                                     <td style="width:150px">
                                         <a href="<?php echo e(route('departman.edit', $item->id)); ?>">
                                             <button type="button" class="btn btn-primary">Düzenle</button>
@@ -88,7 +88,7 @@
     <!-- JAVASCRIPT -->
     <script src="<?php echo e(asset('assets/libs/jquery/jquery.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/libs/metismenu/metisMenu2.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/simplebar/simplebar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/node-waves/waves.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/libs/feather-icons/feather.min.js')); ?>"></script>

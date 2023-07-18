@@ -88,9 +88,9 @@
                                     @if (!isset($item->status))
                                         <td><span style='color:lightgreen'>GELİR</span></td>
                                     @endif
-                                    <td>{{ $item->tutar }}</td>
+                                    <td>{{ $item->tutar ?? 0 }}</td>
                                     <td>{{ $item->description ?? '-' }}</td>
-                                    <td>{{ substr($item->created_at, 0, 10) }}</td>
+                                    <td>{{ substr($item->created_at ?? '00', 0, 10) }}</td>
                                 </tr>
                             @endforeach
 

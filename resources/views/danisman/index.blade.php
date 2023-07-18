@@ -135,7 +135,6 @@
                     <h4 class="card-title mb-0 flex-grow-1">DEPARTMAN LİSTESİ</h4>
                     <div class="flex-shrink-0">
                         <div class="dropdown">
-                            <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
                         </div>
                     </div>
                 </div><!-- end card header -->
@@ -171,7 +170,6 @@
                     <h4 class="card-title mb-0 flex-grow-1">DANIŞMAN LİSTESİ</h4>
                     <div class="flex-shrink-0">
                         <div class="dropdown align-self-start">
-                            <button type="button" class="btn btn-primary">TÜMÜNÜ GÖR</button>
                         </div>
                     </div>
 
@@ -198,22 +196,7 @@
                                             <span class="text-muted mt-1"> {{ $item->phone }}</span>
                                         </td>
 
-                                        <td>
-                                            <div class="flex-shrink-0 text-end">
-                                                <div class="dropdown align-self-start">
-                                                    <a class="dropdown-toggle" href="#" role="button"
-                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">DETAY</a>
-                                                        <a class="dropdown-item" href="#">DÜZENLE</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </td>
+                                        
                                     </tr>
                                 @endforeach
 
@@ -257,18 +240,6 @@
                                     <span class="text-muted">{{ $item->email }}</span>
                                 </div>
                                 <div class="flex-shrink-0 text-end">
-                                    <div class="dropdown align-self-start">
-                                        <a class="dropdown-toggle" href="#" role="button"
-                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Copy</a>
-                                            <a class="dropdown-item" href="#">Save</a>
-                                            <a class="dropdown-item" href="#">Forward</a>
-                                            <a class="dropdown-item" href="#">Delete</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         @endforeach

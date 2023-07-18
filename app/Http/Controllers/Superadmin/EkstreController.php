@@ -94,7 +94,7 @@ class EkstreController extends Controller
                 }
             }
 
-            $data = array_merge($gelir->toArray() , $gider->toArray());
+            #$data = array_merge($gelir->toArray() , $gider->toArray());
             return view('superadmin.pages.ekstre.list', compact('data', 'totalgelir', 'totalgider'));
         }
 
