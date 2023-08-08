@@ -3,13 +3,13 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index" class="logo logo-dark">
+                <a href="<?php echo e(route('danisman.index')); ?>" class="logo logo-dark">
                     <span class="logo-lg">
                         <span class="logo-txt" style="font-size10px">pluseducation</span>
                     </span>
                 </a>
 
-                <a href="index" class="logo logo-light">
+                <a href="<?php echo e(route('danisman.index')); ?>" class="logo logo-light">
                     <span class="logo-lg">
                         <span class="logo-txt" style="font-size10px">pluseducation</span>
                     </span>

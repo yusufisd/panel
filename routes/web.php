@@ -51,6 +51,7 @@ Route::post('superadmin/giris-yap', [AuthController::class, 'login_post'])->name
 Route::prefix('superadmin')->middleware('auth:admin')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('superadmin.logout');
     Route::get('/', [HomeController::class, 'index'])->name('superadmin.index');
+    Route::post('/import',[StudentController::class,'importStudent'])->name('import.student');
 
     Route::get('/ayarlar', [AuthController::class, 'setting'])->name('settings');
     Route::post('/ayarlar', [AuthController::class, 'setting_post'])->name('settings.post');

@@ -19,8 +19,34 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header" style="background-color: gray">
-                    <h4 class="card-title" style="color:white">ÖĞRENCİ LİSTESİ</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="card-title" style="color:white">ÖĞRENCİ LİSTESİ</span>
+                        </div>
+                        <div class="col-md-5"></div>
+                        <div id="goster" style="visibility: hidden" class="col-md-3">
+                            <span style="float:inline-end">
+                                <form action="{{route('import.student')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <input type="file" class="form-control" name="file" id="">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="submit" class="btn btn-success" name="" id="">
+                                        </div>
+                                    </div>
+                                </form>
+                            </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span style="float:right">
+                                <button type="button" onclick="test2()" class="btn btn-success">İÇE AKTAR</button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="card-body">
 
                     <table id="" class="table table-bordered dt-responsive  nowrap w-100">
@@ -100,6 +126,10 @@
                     window.location.href = "{{ route('departman.destroy') }}/" + d;
                 }
             })
+        }
+
+        function test2(){
+            document.getElementById("goster").style.visibility = "visible";
         }
     </script>
     <!-- JAVASCRIPT -->

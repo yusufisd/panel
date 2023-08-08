@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Superadmin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\StudentImport;
 use App\Models\AkademikProgram;
 use App\Models\BasvurulacakUniversiteler;
 use App\Models\Danisman;
@@ -17,7 +18,9 @@ use App\Models\Uniler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Ui\Presets\React;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
+use ZipArchive;
 
 class StudentController extends Controller
 {
@@ -174,5 +177,12 @@ class StudentController extends Controller
         return redirect()->route('ogrenci.list');
     }
 
+    public function importStudent(Request $request){
+        $ext = $request->file->getClientOriginalExtension();
+        if($ext != "xlsx")
+            return back()->withErrors("Lütfen Excel Dosyası Yükleyin.");
+        
+            Excel::import(new StudentImport,$request->file);
+    }
     
 }
